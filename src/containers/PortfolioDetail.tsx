@@ -10,7 +10,7 @@ type PortfolioDetailProps = {
 
 const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
   return (
-    <div className="">
+    <div className="mt-[50px] customMd:mt-[133px] lg:mt-[184px]">
       <p>{project.label}</p>
       <h1 className="text-[60px] leading-[1] tracking-[-2px] lg:text-[80px] font-bold mt-4">
         {project.title}
@@ -26,10 +26,16 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
         className="mt-[40px]"
       />
 
-      <div className="mt-[60px]">
+      <div className="mt-[60px] lg:mt-[165px]">
         <h2 className="text-customGray">About</h2>
-        <p className="mt-[20px] text-xl font-bold">{project.smallDescription}</p>
-        <p className="mt-8 text-customGray">{project.background}</p>
+        <div className="lg:flex justify-between lg:mt-[50px]">
+        <div>
+        <p className="mt-[20px] text-xl font-bold lg:text-[32px] lg:w-[400px] lg:mt-[0px]">{project.smallDescription}</p>
+        </div>
+
+<div className='lg:w-1/2'>
+
+        <p className="mt-8 text- lg:mt-[0px] text-customGray">{project.background}</p>
 
         <div className="mt-8 flex font-semibold gap-8">
             <div>
@@ -40,6 +46,9 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
             <a href={project.codeURL}>View Code</a>
             <div className="mt-[5px] h-[2px] w-24 bg-gray-200"></div>
             </div>
+        </div>
+        </div>
+
         </div>
       </div>
 
