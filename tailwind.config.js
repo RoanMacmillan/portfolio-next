@@ -23,6 +23,12 @@ module.exports = {
       fontFamily: {
         // poppins: ["Poppins", "sans-serif"],
       },
+      screens: {
+        'sm': '700px', // Custom media query for min-width: 700px
+        'customMd': '900px', // custom media query for 900px
+        'customXL': '1364px', // custom xl mq for vertical line
+        'customXXL': '1600px',
+      },
     },
   },
   plugins: [],

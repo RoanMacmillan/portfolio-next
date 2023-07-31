@@ -5,7 +5,7 @@ import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="px-6">
+    <main className="px-6 customMd:px-20">
       <Hero />
       <PortfolioIndex />
       <Footer title="Let's" emphasizedText="Talk" footerLink="Contact" />

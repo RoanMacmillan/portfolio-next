@@ -8,9 +8,10 @@ const ScrollToTop = () => {
   };
 
   return (
-    <div
-      className="absolute bottom-[275px] right-[-40px] flex rotate-90 items-center gap-6"
+    <button
+      className="absolute bottom-[275px] right-[-40px] flex rotate-90 items-center gap-6 sm:bottom-[150px]"
       onClick={handleScrollToTop}
+      
     >
       <p className="text-sm font-semibold">Scroll to Top</p>
 
@@ -21,7 +22,7 @@ const ScrollToTop = () => {
         width={36}
         className="rotate-90"
       />
-    </div>
+    </button>
   );
 };
 
