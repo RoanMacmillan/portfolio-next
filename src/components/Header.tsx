@@ -31,10 +31,10 @@ const Header = () => {
 
 
 
-      <div
+      {/* <div
         className={`fixed left-0 top-0 z-20 h-full w-full bg-customBlack opacity-${
           isMobileMenuOpen ? "100" : "0"
-        } transition-opacity ${isMobileMenuOpen ? "visible" : "invisible"} transition-visibility duration-200`}
+        }  ${isMobileMenuOpen ? "visible" : "invisible"}`}
       >
         <div className="flex items-center justify-between px-6 py-8">
           <Link
@@ -55,22 +55,20 @@ const Header = () => {
           </button>
         </div>
         
-        {/* Your mobile menu content goes here */}
-        <nav>
+        <nav className="text-customWhite px-6 text-6xl font-light">
           <ul>
             <li>
-              <Link href="/">Home</Link>
+              <Link href="/">Portfolio</Link>
             </li>
             <li>
-              <Link href="/about">About</Link>
+              <Link href="/about">About me</Link>
             </li>
             <li>
               <Link href="/contact">Contact</Link>
             </li>
-            {/* Add more menu items as needed */}
           </ul>
         </nav>
-      </div>
+      </div> */}
     </header>
   );
 };

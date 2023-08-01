@@ -18,7 +18,7 @@ const PortfolioItem = () => {
   }
 
   return (
-    <div className="px-6 max-w-[1280px] mx-auto customMd:px-20">
+    <div className="px-6  customMd:px-20">
       <PortfolioDetail project={project} />
       <Footer title="See" emphasizedText="More" footerLink="Portfolio" />
       </div>
