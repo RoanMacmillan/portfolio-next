@@ -20,7 +20,7 @@ const PortfolioItem = () => {
   return (
     <div className="px-6  customMd:px-20">
       <PortfolioDetail project={project} />
-      <Footer title="See" emphasizedText="More" footerLink="Portfolio" />
+      <Footer title="See" emphasizedText="More" footerLink="Portfolio" link='/' />
       </div>
   );
 };

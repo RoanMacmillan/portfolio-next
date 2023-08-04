@@ -1,9 +1,35 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import projects, { Project } from "@/data/projects";
 import Image from "next/image";
 import Link from "next/link";
 
 const PortfolioIndex = () => {
+  const [visibleImages, setVisibleImages] = useState<number[]>([]);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const imageIndex = parseInt(entry.target.getAttribute("data-index")!);
+          if (!visibleImages.includes(imageIndex)) {
+            setVisibleImages((prevVisibleImages) => [
+              ...prevVisibleImages,
+              imageIndex,
+            ]);
+          }
+        }
+      });
+    });
+
+    document.querySelectorAll(".portfolio-image").forEach((image) => {
+      observer.observe(image);
+    });
+
+    return () => {
+      observer.disconnect();
+    };
+  }, [visibleImages]);
+
   return (
     <div className="mx-auto mt-[50px] max-w-[1280px] justify-between sm:grid sm:grid-cols-2 sm:gap-24 lg:mt-[150px]">
       {projects.map((project: Project, index: number) => (
@@ -24,13 +50,23 @@ const PortfolioIndex = () => {
           `}
         >
           <Link href={`/portfolio/${project.slug}`}>
-            <Image
-              src={project.thumbnail}
-              alt={project.thumbnail}
-              priority
-              height={1302}
-              width={1406}
-            />
+            <div
+              className={`portfolio-image overflow-hidden transition-all duration-1000 ${
+                visibleImages.includes(index)
+                  ? "translate-y-0 opacity-100"
+                  : "translate-y-4 opacity-0"
+              }`}
+              data-index={index}
+            >
+              <Image
+                src={project.thumbnail}
+                alt={project.thumbnail}
+                priority
+                height={1302}
+                width={1406}
+                className={`transition-all duration-700 hover:scale-105`}
+              />
+            </div>
           </Link>
 
           <p className="mt-10 text-customBlack">{project.label}</p>

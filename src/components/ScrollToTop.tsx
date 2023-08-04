@@ -9,7 +9,7 @@ const ScrollToTop = () => {
 
   return (
     <button
-      className="absolute bottom-[275px] right-[-40px] flex rotate-90 items-center gap-6 sm:bottom-[150px]"
+      className="absolute group bottom-[275px] right-[-40px] flex rotate-90 items-center gap-6 sm:bottom-[150px] "
       onClick={handleScrollToTop}
       
     >
@@ -20,7 +20,7 @@ const ScrollToTop = () => {
         src={arrow}
         height={36}
         width={36}
-        className="rotate-90"
+        className="rotate-90 group-hover:scale-125 transition-all duration-300"
       />
     </button>
   );

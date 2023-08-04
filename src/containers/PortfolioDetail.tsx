@@ -42,12 +42,20 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
 
             <div className="mt-8 flex gap-8 font-semibold">
               <div>
-                <a href={project.demoURL}>View Site</a>
-                <div className="mt-[5px] h-[2px] w-24 bg-gray-200"></div>
+                <a className="group" href={project.demoURL}>
+                  View Site
+                  <div className="relative mt-[5px] h-[2px] w-24 bg-gray-200">
+                    <div className=" absolute left-0 top-0 h-[2px] w-0 bg-customEmerald transition-all duration-300 group-hover:w-full"></div>
+                  </div>
+                </a>
               </div>
               <div>
-                <a href={project.codeURL}>View Code</a>
-                <div className="mt-[5px] h-[2px] w-24 bg-gray-200"></div>
+                <a className="group" href={project.codeURL}>
+                  View Code
+                  <div className="relative mt-[5px] h-[2px] w-24 bg-gray-200">
+                    <div className=" absolute left-0 top-0 h-[2px] w-0 bg-customEmerald transition-all duration-300 group-hover:w-full"></div>
+                  </div>
+                </a>
               </div>
             </div>
           </div>

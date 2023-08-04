@@ -11,7 +11,7 @@ const AboutHero = () => {
 
         <div className='mt-[50px]'>
       <h2 className='font-bold text-3xl'>About me</h2>
-      <p className='text-customGray mt-4'>Hi, I'm Roan Macmillan. I'm a frontend developer looking for a new role. I'm based in Edinburgh and open to working remotely.</p>
+      <p className='text-customGray mt-4 max-w-[550px]'>Hi, I'm Roan Macmillan. I'm a frontend developer looking for a new role. I'm based in Edinburgh and open to working remotely.</p>
       <p className="mt-[30px] font-semibold">Read More</p>
       <div className="mt-[5px] h-[2px] w-24 bg-gray-200"></div>
       </div>

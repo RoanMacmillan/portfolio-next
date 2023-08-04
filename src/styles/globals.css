@@ -20,6 +20,21 @@
   body {
     font-family: 'Poppins', sans-serif;
   }
-   
 
-  
+
+
+  .gha {
+    transition: all .5s;
+
+
+  }
+
+  .gha:hover {
+    transform: scale(1.25);
+    filter: invert(40%) sepia(93%) saturate(4286%) hue-rotate(150deg) brightness(98%) contrast(101%);
+
+  }
+
+
+
+ 

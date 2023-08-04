@@ -19,7 +19,9 @@ module.exports = {
         customBlack: '#181717',
         customWhite: '#fdfdfd',
         customGray: '#868686',
-        outlineGray: 'rgb(43,43,43)'
+        outlineGray: 'rgb(43,43,43)',
+        customOffWhite: '#c9c9c9',
+        customEmerald: '#009B77',
       },
       fontFamily: {
         // poppins: ["Poppins", "sans-serif"],

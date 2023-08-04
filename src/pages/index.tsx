@@ -7,8 +7,11 @@ export default function Home() {
   return (
     <main className="px-6 customMd:px-20">
       <Hero />
+
+
+      
       <PortfolioIndex />
-      <Footer title="Let's" emphasizedText="Talk" footerLink="Contact" />
+      <Footer title="Let's" emphasizedText="Talk" footerLink="Contact" link='/contact' />
     </main>
   );
 }
