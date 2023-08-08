@@ -3,12 +3,16 @@
 import React from "react";
 import { Project } from "@/data/projects";
 import Image from "next/image";
+import useIntersectionObserver from "@/hooks/useIntersectionObserver";
 
 type PortfolioDetailProps = {
   project: Project;
 };
 
 const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
+  const [dividerRef, dividerRefVisible] = useIntersectionObserver();
+  const [dividerRef1, dividerRefVisible1] = useIntersectionObserver();
+
   return (
     <div className="mx-auto mt-[50px] max-w-[1280px] customMd:mt-[133px] lg:mt-[184px]">
       <p>{project.label}</p>
@@ -18,13 +22,22 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
       <div className="mt-6 h-[5px] w-14 bg-customBlack"></div>
       <p className="mt-10 text-customGray">{project.description}</p>
 
-      <Image
-        src={project.detailStatic1}
-        alt={project.detailStatic1}
-        width={2858}
-        height={1372}
-        className="mt-[40px]"
-      />
+      <div className="relative mt-[40px] overflow-hidden">
+        <div
+          ref={dividerRef}
+          className={`${
+            dividerRefVisible ? "top-[700px]" : "top-[0px]"
+          } absolute top-0 h-full w-full bg-white transition-all duration-[1250ms]`}
+        ></div>
+
+        <Image
+          src={project.detailStatic1}
+          alt={project.detailStatic1}
+          width={2858}
+          height={1372}
+          className=""
+        />
+      </div>
 
       <div className="mt-[60px] lg:mt-[165px]">
         <h2 className="text-customGray">About</h2>
@@ -62,13 +75,22 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
         </div>
       </div>
 
-      <Image
-        src={project.detailStatic3}
-        alt={project.detailStatic3}
-        width={2930}
-        height={1802}
-        className="mt-[60px] lg:mt-[165px]"
-      />
+      <div className="relative mt-[60px] overflow-hidden lg:mt-[165px]">
+        <div
+          ref={dividerRef1}
+          className={`${
+            dividerRefVisible1 ? "top-[700px]" : "top-[0px]"
+          } absolute top-0 h-full w-full bg-white transition-all duration-[1250ms]`}
+        ></div>
+
+        <Image
+          src={project.detailStatic3}
+          alt={project.detailStatic3}
+          width={2930}
+          height={1802}
+          className=""
+        />
+      </div>
 
       <div className="mt-[60px] block h-[1px] w-full bg-gray-200 sm:hidden"></div>
     </div>

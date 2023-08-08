@@ -19,7 +19,7 @@ const Cursor: React.FC = () => {
       style={{
         left: cursorPosition.x,
         top: cursorPosition.y,
-        transform: 'translate(-50%, -50%)',
+        transform: 'translate(-90%, -90%)',
       }}
     />
   );

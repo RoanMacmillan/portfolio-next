@@ -1,6 +1,13 @@
 import React from "react";
+import useIntersectionObserver from "@/hooks/useIntersectionObserver";
+
 
 const Hero = () => {
+
+
+  const [dividerRef, dividerRefVisible] = useIntersectionObserver();
+
+
   return (
     <div className="relative  mx-auto mt-[50px] customMd:mt-[133px] lg:mt-[184px] lg:max-w-[1280px]">
       <h1 className="text-[60px] font-light leading-[1] tracking-[-2px] lg:text-[80px]">
@@ -14,3 +21,4 @@ const Hero = () => {
 };
 
 export default Hero;
+ 

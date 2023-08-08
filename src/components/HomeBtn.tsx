@@ -1,4 +1,4 @@
-import React from "react";
+import React, { RefObject } from "react";
 import Image from "next/image";
 import Ribbon from "../../public/assets/icons/ribbon.svg";
 import Link from "next/link";
@@ -6,7 +6,7 @@ import Link from "next/link";
 const HomeBtn = () => {
   return (
     <Link
-      className="group absolute  bottom-[275px] left-[-10px] hidden -rotate-90 items-center gap-4 sm:bottom-[150px] customXXL:flex"
+      className={` absolute  bottom-[275px] left-[-10px] hidden -rotate-90 items-center gap-4 transition-opacity sm:bottom-[150px] customXXL:flex`}
       href="/"
     >
       <p className="text-sm font-semibold">Portfolio</p>

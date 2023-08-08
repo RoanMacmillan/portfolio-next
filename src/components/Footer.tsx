@@ -1,5 +1,6 @@
-import React, { useEffect, useState, useRef } from "react";
+import React, { useEffect, useState, useRef, RefObject } from "react";
 import Link from "next/link";
+import useIntersectionObserver from "@/hooks/useIntersectionObserver";
 
 interface FooterProps {
   title: string;
@@ -8,37 +9,17 @@ interface FooterProps {
   link: string;
 }
 
-
-
-
 const Footer = ({ title, emphasizedText, footerLink, link }: FooterProps) => {
-
-const [dividerVisible, setDividerVisible] = useState(false);
-
-  useEffect(() => {
-    const dividerObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          // Update visibility state for the divider
-          setDividerVisible(true);
-        }
-      });
-    });
-
-    // Attach the observer to the divider element
-    document.querySelectorAll(".portfolio-divider").forEach((divider) => {
-      dividerObserver.observe(divider);
-    });
-
-    return () => {
-      dividerObserver.disconnect();
-    };
-  }, []);
-
+  const [dividerRef, dividerRefVisible] = useIntersectionObserver();
 
   return (
     <footer className="relative mx-auto mt-[60px] max-w-[1280px] pb-6 sm:mt-[100px] customMd:pb-[50px] lg:mt-[150px]">
-      <div className={`portfolio-divider mb-[100px] hidden h-[1px] bg-gray-200 sm:block transition-all duration-1000 ${dividerVisible ? 'w-full' : 'w-0'} `}></div>
+      <div
+        ref={dividerRef}
+        className={`mb-[100px] hidden h-[1px] bg-gray-200 transition-all duration-1000 sm:block ${
+          dividerRefVisible ? "w-full" : "w-0"
+        } `}
+      ></div>
 
       <h2 className="pb-[30px] text-[60px] font-light leading-[1] tracking-[-2px] lg:text-[70px]">
         {title}
