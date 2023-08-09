@@ -12,7 +12,7 @@ const Header = () => {
   };
 
   return (
-    <header className="relative z-50 flex w-full items-center justify-between px-6 py-8 customMd:fixed">
+    <header className="relative customHeader z-50 flex w-full items-center justify-between px-6 py-8 customMd:fixed">
       <Link
         className="text-[15px] uppercase font-bold tracking-[0.35em] text-customBlack transition-colors duration-300 hover:text-customEmerald "
         href="/"

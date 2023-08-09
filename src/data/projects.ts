@@ -18,7 +18,7 @@ export type Project = {
 
 const projects: Project[] = [
   {
-    slug: "Audio",
+    slug: "audio",
     showLinks: true,
     thumbnail: "/assets/images/mobile/thumbnails/audio-thumb.webp",
     label: "01-04",
@@ -38,7 +38,7 @@ const projects: Project[] = [
   },
   
   {
-    slug: "Arch",
+    slug: "arch",
 
     showLinks: true,
     thumbnail: "/assets/images/mobile/thumbnails/arch-thumb.webp",
@@ -60,7 +60,7 @@ const projects: Project[] = [
 
 
 {
-    slug: "Galleria",
+    slug: "galleria",
 
     showLinks: true,
     thumbnail: "/assets/images/mobile/thumbnails/gallery-thumb.webp",
@@ -81,7 +81,7 @@ const projects: Project[] = [
   },
 
   {
-    slug: "Minimal",
+    slug: "minimal",
 
     showLinks: true,
     thumbnail: "/assets/images/mobile/thumbnails/min-thumb.webp",

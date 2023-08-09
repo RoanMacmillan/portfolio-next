@@ -30,7 +30,7 @@ const SkillsGrid = () => {
   }, [visibleImages]);
 
   return (
-    <div className="mx-auto mt-[60px] grid max-w-[1440px] grid-cols-2 px-4 md:grid-cols-4 customMd:px-20">
+    <div className="mx-auto mt-[60px] grid max-w-[1440px] grid-cols-2 px-6 md:grid-cols-4 customMd:px-20">
       {skills.map((skill: Skill, index: number) => (
         <div key={index}>
           <div

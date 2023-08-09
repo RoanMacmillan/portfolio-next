@@ -22,13 +22,13 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
       <div className="mt-6 h-[5px] w-14 bg-customBlack"></div>
       <p className="mt-10 text-customGray">{project.description}</p>
 
-      <div className="relative mt-[40px] overflow-hidden">
-        <div
+      <div ref={dividerRef} className={`relative mt-[40px] lg:mt-[80px] overflow-hidden ${dividerRefVisible ? 'transition-all delay-200 translate-y-0 duration-1000 opacity-100' : 'opacity-0 translate-y-[20px]'}`}>
+        {/* <div
           ref={dividerRef}
           className={`${
             dividerRefVisible ? "top-[700px]" : "top-[0px]"
           } absolute top-0 h-full w-full bg-white transition-all duration-[1250ms]`}
-        ></div>
+        ></div> */}
 
         <Image
           src={project.detailStatic1}

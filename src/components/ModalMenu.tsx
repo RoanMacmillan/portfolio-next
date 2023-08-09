@@ -1,5 +1,5 @@
 // components/ModalMenu.js
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 import close from "../../public/assets/icons/icon-close.svg";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,23 +11,38 @@ interface ModalMenuProps {
 
 const ModalMenu = ({ isOpen, onClose }: ModalMenuProps) => {
   const handleLinkClick = () => {
-    onClose(); 
+    onClose();
   };
 
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add("modal-open");
+    } else {
+      document.body.classList.remove("modal-open");
+    }
+
+    // Cleanup the effect
+    return () => {
+      document.body.classList.remove("modal-open");
+    };
+  }, [isOpen]);
 
   return (
     <div
-      className={`fixed transition-opacity duration-300 left-0 top-0 flex h-full w-full flex-col justify-center bg-customBlack px-6 py-8 ${
-        isOpen ? "opacity-100 visible" : "opacity-0 invisible"
+      className={`fixed left-0 top-0 flex h-full w-full flex-col justify-center bg-customBlack px-6 py-8 transition-opacity duration-300 ${
+        isOpen ? "visible opacity-100" : "invisible opacity-0"
       }`}
     >
-      <button onClick={onClose} className="absolute right-[20px] top-[28px] group">
+      <button
+        onClick={onClose}
+        className="group absolute right-[20px] top-[28px]"
+      >
         <Image
           src={close}
           alt="Close"
           width={32}
           height={32}
-          className="group-hover:scale-125 closeBtn invert-[1] brightness-0 transition duration-300 gha"
+          className="closeBtn gha brightness-0 invert-[1] transition duration-300 group-hover:scale-125"
         />
       </button>
 
@@ -40,10 +55,16 @@ const ModalMenu = ({ isOpen, onClose }: ModalMenuProps) => {
       </Link>
 
       <div className="mt-auto flex items-center justify-between customMd:mx-auto customMd:w-full customMd:max-w-[1280px]">
-        <nav className={` ${isOpen ? 'transition-all duration-700 opacity-100 translate-y-0 delay-200' : 'opacity-0 translate-y-6'} test flex flex-col text-[60px] font-light leading-[64px] text-customOffWhite customMd:text-[80px] customMd:leading-[108px]
+        <nav
+          className={` ${
+            isOpen
+              ? "translate-y-0 opacity-100 transition-all delay-200 duration-700"
+              : "translate-y-6 opacity-0"
+          } test flex flex-col text-[60px] font-light leading-[64px] text-customOffWhite customMd:text-[80px] customMd:leading-[108px]
         
         
-        `}>
+        `}
+        >
           <Link
             onClick={handleLinkClick}
             className="transition-colors duration-300 hover:text-white"

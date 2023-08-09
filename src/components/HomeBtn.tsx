@@ -5,29 +5,9 @@ import Link from "next/link";
 import useIntersectionObserver from "@/hooks/useIntersectionObserver";
 
 const HomeBtn = () => {
-  // const [homeBtnRef, homeBtnRefVisible] = useIntersectionObserver();
 
   return (
-    <Link
-      className={` absolute  bottom-[275px] left-[-10px] hidden -rotate-90 items-center gap-4  sm:bottom-[150px] customXXL:flex
-      
-      
-      
-      `}
-      href="/"
-      
-      // ref={homeBtnRef}
-    >
-      <p className="text-sm font-semibold">Portfolio</p>
-
-      <Image
-        alt={Ribbon}
-        src={Ribbon}
-        height={24}
-        width={24}
-        className="transition-all duration-300 group-hover:scale-125"
-      />
-    </Link>
+    <div></div>
   );
 };
 
