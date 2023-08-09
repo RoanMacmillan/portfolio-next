@@ -13,7 +13,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <div className="absolute left-0 top-0 h-1 w-full bg-customBlack"></div>
       {/* <button className="fixed m-6 bottom-0 bg-customWhite shadow-md rounded-sm px-4 py-1 z-30">12:37 PM</button> */}
       <HomeBtn />
-      <ScrollToTop />
+      {/* <ScrollToTop /> */}
       <Header />
       <Component {...pageProps} />
       {/* <Footer /> */}

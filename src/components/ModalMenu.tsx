@@ -1,5 +1,5 @@
 // components/ModalMenu.js
-import React from "react";
+import React, {useState} from "react";
 import close from "../../public/assets/icons/icon-close.svg";
 import Image from "next/image";
 import Link from "next/link";
@@ -11,13 +11,14 @@ interface ModalMenuProps {
 
 const ModalMenu = ({ isOpen, onClose }: ModalMenuProps) => {
   const handleLinkClick = () => {
-    onClose();
+    onClose(); 
   };
+
 
   return (
     <div
-      className={`fixed left-0 top-0 flex h-full w-full flex-col justify-center bg-customBlack px-6 py-8 ${
-        isOpen ? "block" : "hidden"
+      className={`fixed transition-opacity duration-300 left-0 top-0 flex h-full w-full flex-col justify-center bg-customBlack px-6 py-8 ${
+        isOpen ? "opacity-100 visible" : "opacity-0 invisible"
       }`}
     >
       <button onClick={onClose} className="absolute right-[20px] top-[28px] group">
@@ -26,7 +27,7 @@ const ModalMenu = ({ isOpen, onClose }: ModalMenuProps) => {
           alt="Close"
           width={32}
           height={32}
-          className="group-hover:scale-125 invert-[1] brightness-0 transition duration-300 gha"
+          className="group-hover:scale-125 closeBtn invert-[1] brightness-0 transition duration-300 gha"
         />
       </button>
 
@@ -39,7 +40,10 @@ const ModalMenu = ({ isOpen, onClose }: ModalMenuProps) => {
       </Link>
 
       <div className="mt-auto flex items-center justify-between customMd:mx-auto customMd:w-full customMd:max-w-[1280px]">
-        <nav className="  flex flex-col text-[60px] font-light leading-[64px] text-customOffWhite customMd:text-[80px] customMd:leading-[108px]">
+        <nav className={` ${isOpen ? 'transition-all duration-700 opacity-100 translate-y-0 delay-200' : 'opacity-0 translate-y-6'} test flex flex-col text-[60px] font-light leading-[64px] text-customOffWhite customMd:text-[80px] customMd:leading-[108px]
+        
+        
+        `}>
           <Link
             onClick={handleLinkClick}
             className="transition-colors duration-300 hover:text-white"

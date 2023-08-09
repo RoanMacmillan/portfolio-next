@@ -2,12 +2,25 @@ import React, { RefObject } from "react";
 import Image from "next/image";
 import Ribbon from "../../public/assets/icons/ribbon.svg";
 import Link from "next/link";
+import useIntersectionObserver from "@/hooks/useIntersectionObserver";
 
 const HomeBtn = () => {
+  const [homeBtnRef, homeBtnRefVisible] = useIntersectionObserver();
+
   return (
     <Link
-      className={` absolute  bottom-[275px] left-[-10px] hidden -rotate-90 items-center gap-4 transition-opacity sm:bottom-[150px] customXXL:flex`}
+      className={` absolute  bottom-[275px] left-[-10px] hidden -rotate-90 items-center gap-4  sm:bottom-[150px] customXXL:flex
+      
+      ${
+        homeBtnRefVisible
+          ? "opacity-100 transition-opacity duration-1000"
+          : "opacity-0"
+      }
+      
+      `}
       href="/"
+      
+      ref={homeBtnRef}
     >
       <p className="text-sm font-semibold">Portfolio</p>
 

@@ -11,15 +11,18 @@ interface FooterProps {
 
 const Footer = ({ title, emphasizedText, footerLink, link }: FooterProps) => {
   const [dividerRef, dividerRefVisible] = useIntersectionObserver();
+  const [footerRef, footerRefVisible] = useIntersectionObserver();
 
   return (
     <footer className="relative mx-auto mt-[60px] max-w-[1280px] pb-6 sm:mt-[100px] customMd:pb-[50px] lg:mt-[150px]">
       <div
         ref={dividerRef}
-        className={`mb-[100px] hidden h-[1px] bg-gray-200 transition-all duration-1000 sm:block ${
+        className={`mb-[100px] hidden h-[1px] bg-gray-200 transition-all duration-[1000ms] sm:block ${
           dividerRefVisible ? "w-full" : "w-0"
         } `}
       ></div>
+
+<div ref={footerRef} className={`${footerRefVisible ? 'transition-all duration-[1000ms] translate-y-0 opacity-100' : 'opacity-0 translate-y-[20px]'}`}>
 
       <h2 className="pb-[30px] text-[60px] font-light leading-[1] tracking-[-2px] lg:text-[70px]">
         {title}
@@ -33,6 +36,8 @@ const Footer = ({ title, emphasizedText, footerLink, link }: FooterProps) => {
           <div className=" absolute left-0 top-0 h-[2px] w-0 bg-customEmerald transition-all duration-300 group-hover:w-full"></div>
         </div>
       </Link>
+
+      </div>
 
       <nav className="mt-[150px]">
         <div className="sm:flex sm:items-center sm:gap-2">

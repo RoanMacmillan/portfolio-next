@@ -5,6 +5,7 @@ import { useRouter } from "next/router";
 import projects, { Project } from "@/data/projects";
 import PortfolioDetail from "@/containers/PortfolioDetail";
 import Footer from "@/components/Footer";
+import ScrollToTop from "@/components/ScrollToTop";
 
 const PortfolioItem = () => {
   const router = useRouter();
@@ -19,6 +20,7 @@ const PortfolioItem = () => {
 
   return (
     <div className="px-6  customMd:px-20">
+      <ScrollToTop />
       <PortfolioDetail project={project} />
       <Footer title="See" emphasizedText="More" footerLink="Portfolio" link='/' />
       </div>

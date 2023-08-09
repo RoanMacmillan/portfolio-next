@@ -3,11 +3,13 @@ import AboutHero from '@/containers/AboutHero'
 import SkillsGrid from '@/components/SkillsGrid'
 import Footer from '@/components/Footer'
 import ServicesContainer from '@/containers/ServicesContainer'
+import ScrollToTop from '@/components/ScrollToTop'
 
 const about = () => {
   return (
     <div className=''>
 
+    <ScrollToTop />
     <AboutHero />
     <SkillsGrid />
     <ServicesContainer />
