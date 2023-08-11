@@ -1,4 +1,8 @@
 import React, { useEffect } from "react";
+import { motion } from 'framer-motion';
+import LoadingBar from "./LoadingBar";
+import { easeIn } from "framer-motion/dom";
+
 
 const LoadingModal = ({ isLoading }: { isLoading: boolean }) => {
   useEffect(() => {
@@ -15,7 +19,7 @@ const LoadingModal = ({ isLoading }: { isLoading: boolean }) => {
 
   return (
     <div
-      className={`fixed left-0 top-0 z-50 flex h-screen w-screen items-center justify-center bg-customBlack
+      className={`fixed left-0 top-0 z-50 flex h-screen w-screen items-center justify-center  bg-customBlack
       
       ${isLoading ? "fadeIn" : "fadeOut pointer-events-none"}
       
@@ -25,9 +29,11 @@ const LoadingModal = ({ isLoading }: { isLoading: boolean }) => {
         Loading...
       </div>
 
-      {isLoading && (
-        <div className="absolute top-0 left-0 right-0 h-1 bg-customEmerald animate-loading-bar"></div>
-      )}
+
+<LoadingBar backgroundColorClass="bg-customEmerald" />
+
+
+
 
     </div>
   );

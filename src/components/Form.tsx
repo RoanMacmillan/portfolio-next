@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { motion } from "framer-motion";
+
 
 const Form: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -24,7 +26,15 @@ const Form: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="mt-10 customMd:mt-0 customMd:w-1/2 customMd:ml-28">
+    <form onSubmit={handleSubmit} className="mt-10 customMd:mt-0 customMd:w-1/2 customMd:ml-0">
+
+<motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 1, y: -20 }}
+        transition={{ duration: 0.8 }}
+      >
+
 <div className="flex justify-between">
 
       <div className="flex flex-col w-[45%]">
@@ -74,6 +84,9 @@ className="border-b-2 border-customBlack py-4 outline-none mt-1 text-sm"
       </div>
 
       <button className="mt-8 bg-customBlack w-[150px] h-[45px] hover:bg-customWhite hover:text-customBlack border-customBlack border-[2px] transition-all duration-300 text-customWhite font-semibold customMd:mt-16" type="submit">Send Now</button>
+    
+    </motion.div>
+    
     </form>
   );
 };

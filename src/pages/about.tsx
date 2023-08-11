@@ -1,28 +1,35 @@
-import React from 'react'
-import AboutHero from '@/containers/AboutHero'
-import SkillsGrid from '@/components/SkillsGrid'
-import Footer from '@/components/Footer'
-import ServicesContainer from '@/containers/ServicesContainer'
-import ScrollToTop from '@/components/ScrollToTop'
-
+import React from "react";
+import AboutHero from "@/containers/AboutHero";
+import SkillsGrid from "@/components/SkillsGrid";
+import Footer from "@/components/Footer";
+import ServicesContainer from "@/containers/ServicesContainer";
+import ScrollToTop from "@/components/ScrollToTop";
+import LoadingBar from "@/components/LoadingBar";
+import Header from "@/components/Header";
+import PageTransition from "@/components/PageTransition";
 
 const about = () => {
-
-
-
   return (
-    <div className=''>
-      <div  className={`absolute left-0 top-0 h-1 bg-customBlack`}></div>
+    <>
+      <Header />
 
-    <AboutHero />
-    <SkillsGrid />
-    <ServicesContainer />
-    <div className='px-4 customMd:px-20 max-w-[1440px] mx-auto'>
-    <Footer title="Let's" emphasizedText='Talk' footerLink='Contact' link='/contact' />
-    </div>
+      <PageTransition>
+        <LoadingBar backgroundColorClass="bg-customBlack" />
 
-    </div>
-  )
-}
+        <AboutHero />
+        <SkillsGrid />
+        <ServicesContainer />
+        <div className="mx-auto max-w-[1440px] px-4 customMd:px-20">
+          <Footer
+            title="Let's"
+            emphasizedText="Talk"
+            footerLink="Contact"
+            link="/contact"
+          />
+        </div>
+      </PageTransition>
+    </>
+  );
+};
 
-export default about
+export default about;

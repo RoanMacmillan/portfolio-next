@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import Link from "next/link";
-import close from "../../public/assets/icons/icon-close.svg";
-import Image from "next/image";
 import ModalMenu from "./ModalMenu";
 
 const Header = () => {
@@ -12,20 +10,26 @@ const Header = () => {
   };
 
   return (
-    <header className="relative customHeader z-50 flex w-full items-center justify-between px-6 py-8 customMd:fixed">
+    <header
+      className={`relative z-50 flex w-full items-center justify-between px-6 py-8 customMd:fixed `}
+    >
       <Link
-        className="text-[15px] uppercase font-bold tracking-[0.35em] text-customBlack transition-colors duration-300 hover:text-customEmerald "
+        className={`text-[15px] font-bold uppercase tracking-[0.35em] text-customBlack transition-colors duration-300 hover:text-customEmerald`}
         href="/"
       >
-      rm
+        rm
       </Link>
 
+      <Link href="/contact">contact</Link>
+
+      <Link href="/about">about</Link>
+
       <button
-        className="flex h-6 w-5 flex-col items-center justify-center gap-[6px] hover:scale-125 transition-all duration-300 group  "
+        className="group flex h-6 w-5 flex-col items-center justify-center gap-[6px] transition-all duration-300 hover:scale-125  "
         onClick={handleMenuClick}
       >
-        <div className="h-[2px] w-full bg-customBlack group-hover:bg-customEmerald transition-all duration-300"></div>
-        <div className="h-[2px] w-full bg-customBlack group-hover:bg-customEmerald transition-all duration-300"></div>
+        <div className="h-[2px] w-full bg-customBlack transition-all duration-300 group-hover:bg-customEmerald"></div>
+        <div className="h-[2px] w-full bg-customBlack transition-all duration-300 group-hover:bg-customEmerald"></div>
       </button>
 
       <ModalMenu isOpen={isMenuOpen} onClose={handleMenuClick} />

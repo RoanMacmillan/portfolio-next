@@ -4,40 +4,49 @@ import React from "react";
 import { Project } from "@/data/projects";
 import Image from "next/image";
 import useIntersectionObserver from "@/hooks/useIntersectionObserver";
+import { motion } from "framer-motion";
 
 type PortfolioDetailProps = {
   project: Project;
 };
 
 const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
-  const [dividerRef, dividerRefVisible] = useIntersectionObserver();
   const [dividerRef1, dividerRefVisible1] = useIntersectionObserver();
 
   return (
     <div className="mx-auto mt-[50px] max-w-[1280px] customMd:mt-[133px] lg:mt-[184px]">
+      <div className="absolute left-0 top-0 h-1 w-full bg-customBlack"></div>
       <p>{project.label}</p>
       <h1 className="mt-4 text-[60px] font-bold leading-[1] tracking-[-2px] lg:text-[80px]">
         {project.title}
       </h1>
       <div className="mt-6 h-[5px] w-14 bg-customBlack"></div>
-      <p className="mt-10 text-customGray">{project.description}</p>
+      {/* <p className="mt-10 text-customGray">{project.description}</p> */}
 
-      <div ref={dividerRef} className={`relative mt-[40px] lg:mt-[80px] overflow-hidden ${dividerRefVisible ? 'transition-all delay-200 translate-y-0 duration-1000 opacity-100' : 'opacity-0 translate-y-[20px]'}`}>
-        {/* <div
+      <motion.div
+        initial={{ opacity: 0, y: 30 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 1, y: -20 }}
+        transition={{ duration: 0.8 }}
+      >
+        <div className={`relative mt-[40px] overflow-hidden lg:mt-[80px]`}>
+          {/* <div
           ref={dividerRef}
           className={`${
             dividerRefVisible ? "top-[700px]" : "top-[0px]"
           } absolute top-0 h-full w-full bg-white transition-all duration-[1250ms]`}
         ></div> */}
 
-        <Image
-          src={project.detailStatic1}
-          alt={project.detailStatic1}
-          width={2858}
-          height={1372}
-          className=""
-        />
-      </div>
+          <Image
+            src={project.detailStatic1}
+            alt={project.detailStatic1}
+            width={2858}
+            height={1372}
+            className=""
+            priority
+          />
+        </div>
+      </motion.div>
 
       <div className="mt-[60px] lg:mt-[165px]">
         <h2 className="text-customGray">About</h2>
@@ -75,20 +84,19 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
         </div>
       </div>
 
-      <div className="relative mt-[60px] overflow-hidden lg:mt-[165px]">
-        <div
-          ref={dividerRef1}
-          className={`${
-            dividerRefVisible1 ? "top-[700px]" : "top-[0px]"
-          } absolute top-0 h-full w-full bg-white transition-all duration-[1250ms]`}
-        ></div>
-
+      <div
+        ref={dividerRef1}
+        className={`relative mt-[60px] overflow-hidden lg:mt-[165px] ${
+          dividerRefVisible1
+            ? "translate-y-[-30px] opacity-100 transition-all duration-[800ms]"
+            : "translate-y-0 opacity-0"
+        }`}
+      >
         <Image
           src={project.detailStatic3}
           alt={project.detailStatic3}
           width={2930}
           height={1802}
-          className=""
         />
       </div>
 

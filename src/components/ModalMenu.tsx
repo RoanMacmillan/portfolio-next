@@ -33,6 +33,10 @@ const ModalMenu = ({ isOpen, onClose }: ModalMenuProps) => {
         isOpen ? "visible opacity-100" : "invisible opacity-0"
       }`}
     >
+
+      {/* <div className="bg-customEmerald w-full absolute top-0 h-1 left-0"></div> */}
+
+
       <button
         onClick={onClose}
         className="group absolute right-[20px] top-[28px]"

@@ -1,33 +1,13 @@
 import React, { useRef, useEffect, useState } from "react";
 import skills, { Skill } from "@/data/skills";
 import Image from "next/image";
+import { motion } from "framer-motion";
+
+
 
 const SkillsGrid = () => {
-  const [visibleImages, setVisibleImages] = useState<number[]>([]);
 
-  useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const imageIndex = parseInt(entry.target.getAttribute("data-index")!);
-          if (!visibleImages.includes(imageIndex)) {
-            setVisibleImages((prevVisibleImages) => [
-              ...prevVisibleImages,
-              imageIndex,
-            ]);
-          }
-        }
-      });
-    });
 
-    document.querySelectorAll(".grid-image").forEach((image) => {
-      observer.observe(image);
-    });
-
-    return () => {
-      observer.disconnect();
-    };
-  }, [visibleImages]);
 
   return (
     <div className="mx-auto mt-[60px] grid max-w-[1440px] grid-cols-2 px-6 md:grid-cols-4 customMd:px-20">
@@ -48,18 +28,25 @@ const SkillsGrid = () => {
             
             flex h-[275px] items-center justify-center border border-gray-200`}
           >
+
+
+<motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 1, y: -20 }}
+      transition={{ duration: 0.8 }}
+      
+    >
+
             <Image
               src={skill.logo}
               alt={skill.logo}
               width={60}
               height={60}
-              className={`grid-image overflow-hidden transition-all duration-1000 ${
-                visibleImages.includes(index)
-                  ? "translate-y-0 opacity-100"
-                  : "translate-y-4 opacity-0"
-              }`}
-              data-index={index}
+              className={`grid-image overflow-hidden transition-all duration-1000`}
             />
+
+</motion.div>
           </div>
         </div>
       ))}

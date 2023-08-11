@@ -6,7 +6,7 @@ import circles from "../../public/assets/icons/join.svg";
 const ServicesContainer = () => {
   return (
     <div className="mt-[60px] bg-customBlack px-6 py-8 customMd:px-[0px] customMd:pb-[100px] customMd:pt-[64px] customMd:mt-[100px]">
-      <div className="mx-auto max-w-[1440px] px-4 customMd:px-20">
+      <div className="mx-auto max-w-[1440px] px-0 customMd:px-20">
         <Image
           src={circles}
           alt="Circles logo"

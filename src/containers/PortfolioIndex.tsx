@@ -5,9 +5,8 @@ import Link from "next/link";
 import LoadingModal from "@/components/LoadingModal";
 import Hero from "./Hero";
 
-const PortfolioIndex = () => {
+const PortfolioIndex = ({ isLoading }: { isLoading: boolean }) => {
   const [visibleImages, setVisibleImages] = useState<number[]>([]);
-  const [isLoading, setIsLoading] = useState(true); // Start with isLoading true
 
   useEffect(() => {
     const observer = new IntersectionObserver((entries) => {
@@ -16,7 +15,7 @@ const PortfolioIndex = () => {
           const imageIndex = parseInt(entry.target.getAttribute("data-index")!);
           if (!visibleImages.includes(imageIndex)) {
             setVisibleImages((prevVisibleImages) => [
-              ...prevVisibleImages,
+              ...prevVisibleImages, 
               imageIndex,
             ]);
           }
@@ -33,27 +32,20 @@ const PortfolioIndex = () => {
     };
   }, [visibleImages]);
 
-  useEffect(() => {
-    const loadingTimeout = setTimeout(() => {
-      setIsLoading(false); // After a delay, set isLoading to false
-    }, 1150); // Adjust the delay time (in milliseconds) as needed
-
-    return () => {
-      clearTimeout(loadingTimeout);
-    };
-  }, []);
+  
 
   return (
 
 <>
 
-<div  className={`absolute left-0 top-0 h-1 w-full bg-customBlack ${isLoading ? 'invisible' : 'visible'}`}></div>
+{/* <LoadingModal isLoading={isLoading} /> */}
 
 
-<Hero isLoading={isLoading} />
+{/* <div  className={`absolute left-0 top-0 h-1 w-full bg-customBlack ${isLoading ? 'invisible' : 'visible'}`}></div> */}
+
+
 
     <div className="mx-auto mt-[50px]  max-w-[1280px] justify-between sm:grid sm:grid-cols-2 sm:gap-24 lg:mt-[150px]">
-      <LoadingModal isLoading={isLoading} />
 
       {/* Show LoadingModal when isLoading is true */}
       {projects.map((project: Project, index: number) => (

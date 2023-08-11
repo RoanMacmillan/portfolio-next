@@ -3,6 +3,7 @@ import Form from "@/components/Form";
 import Image from "next/image";
 import mail from "../../public/assets/icons/icon-mail.svg";
 import photo from "../../public/assets/images/photos/footer-hero.webp";
+import { motion } from "framer-motion";
 
 const FormContainer = () => {
   return (
@@ -13,7 +14,7 @@ const FormContainer = () => {
       </h1>
       <div className="mt-6 h-[5px] w-14 bg-customBlack"></div>
 
-      <div className="mt-12 customMd:flex lg:mt-16">
+      <div className="mt-12 justify-between customMd:flex lg:mt-16">
         <div className="customMd:w-[40%]">
           <h2 className="text-2xl font-bold">Contact form</h2>
           <p className="mt-4 text-customGray">
@@ -22,7 +23,8 @@ const FormContainer = () => {
           </p>
         </div>
 
-        <Form />
+       
+          <Form />
       </div>
 
       <div className="mt-20 customMd:mt-32">

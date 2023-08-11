@@ -1,8 +1,8 @@
 import React from "react";
 
-const Hero = ({ isLoading }: { isLoading: boolean }) => {
+const Hero = () => {
   return (
-    <div className={`relative mx-auto mt-[50px] customMd:mt-[133px] lg:mt-[184px] lg:max-w-[1280px] ${isLoading ? 'invisible' : 'visible'} `}>
+    <div className={`relative mx-auto mt-[50px] customMd:mt-[133px] lg:mt-[184px] lg:max-w-[1280px] `}>
       <h1 className="text-[60px] font-light leading-[1] tracking-[-2px] lg:text-[80px]">
         Check<br></br>My<br className="lg:hidden"></br>
         <span className="font-bold lg:ml-[10px]">Portfolio</span>
