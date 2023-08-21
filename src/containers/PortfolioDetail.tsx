@@ -21,7 +21,6 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
         {project.title}
       </h1>
       <div className="mt-6 h-[5px] w-14 bg-customBlack"></div>
-      {/* <p className="mt-10 text-customGray">{project.description}</p> */}
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -30,13 +29,6 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
         transition={{ duration: 0.8, delay: 0.5 }}
       >
         <div className={`relative mt-[40px] overflow-hidden lg:mt-[80px]`}>
-          {/* <div
-          ref={dividerRef}
-          className={`${
-            dividerRefVisible ? "top-[700px]" : "top-[0px]"
-          } absolute top-0 h-full w-full bg-white transition-all duration-[1250ms]`}
-        ></div> */}
-
           <Image
             src={project.detailStatic1}
             alt={project.detailStatic1}

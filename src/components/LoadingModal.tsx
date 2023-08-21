@@ -1,7 +1,5 @@
 import React, { useEffect } from "react";
-import { motion } from 'framer-motion';
 import LoadingBar from "./LoadingBar";
-import { easeIn } from "framer-motion/dom";
 
 
 const LoadingModal = ({ isLoading }: { isLoading: boolean }) => {

@@ -20,9 +20,7 @@ const Header = () => {
         rm
       </Link>
 
-      {/* <Link href="/contact">contact</Link>
-
-      <Link href="/about">about</Link> */}
+    
 
       <button
         className="group flex h-6 w-5 flex-col items-center justify-center gap-[6px] transition-all duration-300 hover:scale-125  "

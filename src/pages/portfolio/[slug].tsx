@@ -32,7 +32,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ project }) => {
   );
 };
 
-export async function getServerSideProps({
+export async function getStaticProps({
   params,
 }: {
   params: { slug: string };

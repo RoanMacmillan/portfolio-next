@@ -3,12 +3,7 @@ import skills, { Skill } from "@/data/skills";
 import Image from "next/image";
 import { motion } from "framer-motion";
 
-
-
 const SkillsGrid = () => {
-
-
-
   return (
     <div className="mx-auto mt-[60px] grid max-w-[1440px] grid-cols-2 px-6 md:grid-cols-4 customMd:px-20">
       {skills.map((skill: Skill, index: number) => (
@@ -28,25 +23,20 @@ const SkillsGrid = () => {
             
             flex h-[275px] items-center justify-center border border-gray-200`}
           >
-
-
-<motion.div
-      initial={{ opacity: 0, y: 20 }}
-      animate={{ opacity: 1, y: 0 }}
-      exit={{ opacity: 1, y: -20 }}
-      transition={{ duration: 0.8 }}
-      
-    >
-
-            <Image
-              src={skill.logo}
-              alt={skill.logo}
-              width={60}
-              height={60}
-              className={`grid-image overflow-hidden transition-all duration-1000`}
-            />
-
-</motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 1, y: -20 }}
+              transition={{ duration: 0.8 }}
+            >
+              <Image
+                src={skill.logo}
+                alt={skill.logo}
+                width={60}
+                height={60}
+                className={`grid-image overflow-hidden transition-all duration-1000`}
+              />
+            </motion.div>
           </div>
         </div>
       ))}

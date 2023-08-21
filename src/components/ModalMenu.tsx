@@ -34,7 +34,6 @@ const ModalMenu = ({ isOpen, onClose }: ModalMenuProps) => {
       }`}
     >
 
-      {/* <div className="bg-customEmerald w-full absolute top-0 h-1 left-0"></div> */}
 
 
       <button

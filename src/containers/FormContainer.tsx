@@ -2,8 +2,6 @@ import React from "react";
 import Form from "@/components/Form";
 import Image from "next/image";
 import mail from "../../public/assets/icons/icon-mail.svg";
-import photo from "../../public/assets/images/photos/footer-hero.webp";
-import { motion } from "framer-motion";
 
 const FormContainer = () => {
   return (
