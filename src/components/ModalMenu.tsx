@@ -34,7 +34,7 @@ const ModalMenu = ({ isOpen, onClose }: ModalMenuProps) => {
       }`}
     >
 
-
+      <div className="h-1 w-full absolute top-0 left-0 bg-customEmerald"></div>
 
       <button
         onClick={onClose}
@@ -93,9 +93,7 @@ const ModalMenu = ({ isOpen, onClose }: ModalMenuProps) => {
 
         <div className=" hidden w-1/2 customMd:block">
           <p className="text-[15px] text-customGray">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s.
+          Frontend development refers to the process of creating and designing the visible parts of a website or web application that users interact with directly.
           </p>
         </div>
       </div>

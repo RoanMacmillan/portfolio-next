@@ -14,7 +14,7 @@ const AboutHero = () => {
 
       <div className="mt-[50px]">
         <h2 className="text-3xl font-bold">About me</h2>
-        <p className="mt-4 max-w-[550px] text-customGray">
+        <p className="mt-4 max-w-[550px] text-customGray text-[15px]">
           Hi, I'm Roan Macmillan. I'm a frontend developer looking for a new
           role. I'm based in Edinburgh and open to working remotely.
         </p>

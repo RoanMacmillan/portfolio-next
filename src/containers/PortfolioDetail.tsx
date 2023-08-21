@@ -35,7 +35,7 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
             width={2858}
             height={1372}
             className=""
-            priority
+            priority={true}
           />
         </div>
       </motion.div>
@@ -50,7 +50,7 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
           </div>
 
           <div className="lg:w-1/2">
-            <p className="mt-8 leading-7 text-customGray lg:mt-[0px]">
+            <p className="mt-8 leading-7 text-customGray text-[15px] lg:mt-[0px]">
               {project.background}
             </p>
 

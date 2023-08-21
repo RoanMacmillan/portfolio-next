@@ -18,7 +18,7 @@ const ServicesContainer = () => {
         <h1 className="mt-4 text-lg font-bold text-customWhite customMd:text-3xl">
           Services
         </h1>
-        <p className="mt-4 text-customGray">
+        <p className="mt-4 text-customGray text-[15px]">
           You can check out what I do below
         </p>
       </div>

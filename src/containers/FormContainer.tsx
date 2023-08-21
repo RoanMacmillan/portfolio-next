@@ -15,7 +15,7 @@ const FormContainer = () => {
       <div className="mt-12 justify-between customMd:flex lg:mt-16">
         <div className="customMd:w-[40%]">
           <h2 className="text-2xl font-bold">Contact form</h2>
-          <p className="mt-4 text-customGray">
+          <p className="mt-4 text-customGray text-[15px]">
             Got a project in mind? Find my contact info below or feel free to
             fill out the form below with your questions.
           </p>
@@ -29,7 +29,7 @@ const FormContainer = () => {
         <Image src={mail} alt={mail} width={48} height={48} />
 
         <h3 className="mt-6 text-lg font-bold">roanmacmillan@hotmail.com</h3>
-        <p className="mt-2 text-customGray">
+        <p className="mt-2 text-customGray text-[15px]">
           Send me a message and I will reach out as soon as possible.
         </p>
       </div>

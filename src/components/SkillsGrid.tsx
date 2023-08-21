@@ -27,7 +27,7 @@ const SkillsGrid = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 1, y: -20 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
             >
               <Image
                 src={skill.logo}
@@ -35,6 +35,7 @@ const SkillsGrid = () => {
                 width={60}
                 height={60}
                 className={`grid-image overflow-hidden transition-all duration-1000`}
+                priority={true}
               />
             </motion.div>
           </div>

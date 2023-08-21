@@ -52,7 +52,7 @@ const ServicesFlex = () => {
               <h2 className="my-6 font-bold text-customWhite">
                 {service.heading}
               </h2>
-              <p className="text-customGray">{service.paragraph}</p>
+              <p className="text-customGray text-[15px]">{service.paragraph}</p>
             </div>
           </div>
         ))}

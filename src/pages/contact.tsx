@@ -17,7 +17,7 @@ const contact = () => {
 
       <Header />
       <PageTransition>
-        <div className="px-6 customMd:px-20">
+        <div className="px-6 customMd:px-20 xl:px-36">
           <LoadingBar backgroundColorClass="bg-customBlack" />
 
           <ContactHero />

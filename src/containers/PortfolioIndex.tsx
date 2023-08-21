@@ -32,7 +32,7 @@ const PortfolioIndex = ({ isLoading }: { isLoading: boolean }) => {
 
   return (
     <>
-      <div className="mx-auto mt-[50px]  max-w-[1280px] justify-between sm:grid sm:grid-cols-2 sm:gap-24 lg:mt-[150px]">
+      <div className="mx-auto mt-[50px]  max-w-[1280px] justify-between sm:grid sm:grid-cols-2 sm:gap-24 xl:gap-36 lg:mt-[150px]">
         {projects.map((project: Project, index: number) => (
           <div
             key={index}
@@ -76,11 +76,11 @@ const PortfolioIndex = ({ isLoading }: { isLoading: boolean }) => {
                 </Link>
               </div>
 
-              <p className="mt-10 text-customBlack">{project.label}</p>
+              <p className="mt-10 text-customBlack ">{project.label}</p>
               <h2 className="mt-4 text-xl font-bold text-customBlack lg:mt-6 lg:text-3xl">
                 {project.title}
               </h2>
-              <p className="mt-4 text-customGray lg:mt-8">
+              <p className="mt-4 text-customGray lg:mt-8 text-[15px]">
                 {project.description}
               </p>
             </div>

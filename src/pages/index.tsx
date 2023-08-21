@@ -24,35 +24,33 @@ const Home = () => {
 
   return (
     <>
-
-<ScrollToTop />
-<HomeBtn />
-
+      <ScrollToTop />
+      <HomeBtn />
 
       <div className={`${isLoading ? "invisible" : "visible"}`}>
         <Header />
       </div>
 
-<PageTransition>
+      <PageTransition>
+        <div className="absolute left-0 top-0 h-1 w-full bg-customBlack"></div>
 
+        <LoadingModal isLoading={isLoading} />
 
-      <div className="absolute top-0 left-0 h-1 w-full bg-customBlack"></div>
+        <main
+          className={`px-6 customMd:px-20 xl:px-36 ${
+            isLoading ? "invisible" : "visible"
+          }`}
+        >
+          <Hero />
 
-      <LoadingModal isLoading={isLoading} />
-
-      <main
-        className={`px-6 customMd:px-20 ${isLoading ? "invisible" : "visible"}`}
-      >
-        <Hero />
-
-        <PortfolioIndex isLoading={isLoading} />
-        <Footer
-          title="Let's"
-          emphasizedText="Talk"
-          footerLink="Contact"
-          link="/contact"
-        />
-      </main>
+          <PortfolioIndex isLoading={isLoading} />
+          <Footer
+            title="Let's"
+            emphasizedText="Talk"
+            footerLink="Contact"
+            link="/contact"
+          />
+        </main>
       </PageTransition>
     </>
   );
