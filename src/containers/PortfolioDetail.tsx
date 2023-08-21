@@ -26,7 +26,7 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 1, y: -20 }}
-        transition={{ duration: 0.8, delay: 0.5 }}
+        transition={{ duration: 0.8 }}
       >
         <div className={`relative mt-[40px] overflow-hidden lg:mt-[80px]`}>
           <Image

@@ -103,7 +103,7 @@ const ModalMenu = ({ isOpen, onClose }: ModalMenuProps) => {
       <div className="mt-auto customMd:mx-auto customMd:w-full customMd:max-w-[1280px]">
         <div className="sm:flex sm:items-center sm:gap-2">
           <p className="text-sm text-customGray">Follow me</p>
-          <div className="mt-2 flex flex-col text-xl font-medium text-customWhite sm:mt-0 sm:flex-row sm:gap-2 sm:text-sm">
+          <div className="mt-2 flex flex-col  text-xl font-medium text-customWhite sm:mt-0 sm:flex-row sm:gap-2 sm:text-sm">
             <a
               className="transition-colors duration-300 hover:text-customEmerald"
               href="https://www.github.com/"
@@ -132,7 +132,8 @@ const ModalMenu = ({ isOpen, onClose }: ModalMenuProps) => {
         </div>
 
         <p className="mt-2 text-sm text-customGray sm:mt-0">
-          Skill Icons created by Freepik - Flaticon
+        © 2023 Roan Macmillan. Skill Icons created by Freepik - Flaticon
+
         </p>
       </div>
     </div>

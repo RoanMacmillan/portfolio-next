@@ -14,7 +14,7 @@ const ScrollToTop = () => {
     <div
       ref={dividerRef}
       onClick={handleScrollToTop}
-      className={`absolute bottom-[175px] group rotate-90 flex  items-center gap-6 cursor-pointer ${
+      className={`absolute bottom-[270px] sm:bottom-[175px] group rotate-90 flex z-50  items-center gap-6 cursor-pointer ${
         dividerRefVisible
           ? "right-[-35px] transition-all delay-200 duration-1000"
           : "right-[-91px]"
