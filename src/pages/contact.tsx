@@ -7,24 +7,28 @@ import { motion } from "framer-motion";
 import LoadingBar from "@/components/LoadingBar";
 import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
+import HomeBtn from "@/components/HomeBtn";
 
 const contact = () => {
   return (
     <>
-      <Header />
-<PageTransition>
-      <div className="px-6 customMd:px-20">
-        <LoadingBar backgroundColorClass="bg-customBlack" />
+      <ScrollToTop />
+      <HomeBtn />
 
-        <ContactHero />
-        <FormContainer />
-        <Footer
-          title="View"
-          emphasizedText="Portfolio"
-          footerLink="Portfolio"
-          link="/"
-        />
-      </div>
+      <Header />
+      <PageTransition>
+        <div className="px-6 customMd:px-20">
+          <LoadingBar backgroundColorClass="bg-customBlack" />
+
+          <ContactHero />
+          <FormContainer />
+          <Footer
+            title="View"
+            emphasizedText="Portfolio"
+            footerLink="Portfolio"
+            link="/"
+          />
+        </div>
       </PageTransition>
     </>
   );

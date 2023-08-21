@@ -7,10 +7,14 @@ import ScrollToTop from "@/components/ScrollToTop";
 import LoadingBar from "@/components/LoadingBar";
 import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";
+import HomeBtn from "@/components/HomeBtn";
 
 const about = () => {
   return (
     <>
+      <ScrollToTop />
+      <HomeBtn />
+
       <Header />
 
       <PageTransition>

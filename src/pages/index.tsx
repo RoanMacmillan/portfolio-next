@@ -6,6 +6,7 @@ import Footer from "@/components/Footer";
 import ScrollToTop from "@/components/ScrollToTop";
 import LoadingModal from "@/components/LoadingModal";
 import Header from "@/components/Header";
+import HomeBtn from "@/components/HomeBtn";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true); // Start with isLoading true
@@ -22,6 +23,10 @@ const Home = () => {
 
   return (
     <>
+
+<ScrollToTop />
+<HomeBtn />
+
       <div className={`${isLoading ? "invisible" : "visible"}`}>
         <Header />
       </div>

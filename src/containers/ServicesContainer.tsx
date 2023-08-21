@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import ServicesFlex from "@/components/ServicesFlex";
 import Image from "next/image";
 import circles from "../../public/assets/icons/join.svg";

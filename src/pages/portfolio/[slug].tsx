@@ -4,6 +4,8 @@ import projects, { Project } from "@/data/projects";
 import PortfolioDetail from "@/containers/PortfolioDetail";
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
+import ScrollToTop from "@/components/ScrollToTop";
+import HomeBtn from "@/components/HomeBtn";
 
 interface PortfolioItemProps {
   project: Project;
@@ -12,6 +14,9 @@ interface PortfolioItemProps {
 const PortfolioItem: React.FC<PortfolioItemProps> = ({ project }) => {
   return (
     <>
+      <ScrollToTop />
+      <HomeBtn />
+
       <Header />
 
       <div className="px-6  customMd:px-20">

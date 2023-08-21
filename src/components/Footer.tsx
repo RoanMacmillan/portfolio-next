@@ -40,11 +40,11 @@ const Footer = ({ title, emphasizedText, footerLink, link }: FooterProps) => {
       </div>
 
       <nav className="mt-[150px]">
-        <div className="sm:flex sm:items-center sm:gap-2">
+        <div className="sm:flex sm:items-center  cus sm:gap-2  ">
           <p className="text-sm text-customGray">Follow me</p>
-          <div className="mt-6 flex flex-col text-xl font-medium text-customBlack sm:mt-0 sm:flex-row sm:gap-2 sm:text-sm">
+          <div className="mt-6 flex flex-col text-xl font-medium  text-customBlack sm:mt-0 sm:flex-row sm:gap-2 sm:text-sm">
             <a
-              className="transition-colors hover:text-customEmerald"
+              className="transition-colors  hover:text-customEmerald"
               href="https://www.github.com/"
             >
               Github
@@ -70,8 +70,8 @@ const Footer = ({ title, emphasizedText, footerLink, link }: FooterProps) => {
           </div>
         </div>
 
-        <p className="mt-6 text-sm text-customGray sm:mt-0">
-          Skill Icons created by Freepik - Flaticon
+        <p className="mt-6 text-sm text-customGray  sm:mt-0 ">
+        © 2023 Roan Macmillan. Skill Icons created by Freepik - Flaticon
         </p>
       </nav>
     </footer>
