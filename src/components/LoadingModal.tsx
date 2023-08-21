@@ -23,7 +23,7 @@ const LoadingModal = ({ isLoading }: { isLoading: boolean }) => {
       
       `}
     >
-      <div className={`loadingTitle text-[40px] customMd:text-[80px] font-light text-white`}>
+      <div className={`loadingTitle text-[50px] customMd:text-[80px] font-light text-white`}>
         Loading...
       </div>
 
