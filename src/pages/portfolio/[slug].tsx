@@ -32,6 +32,18 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ project }) => {
   );
 };
 
+export async function getStaticPaths() {
+  // Generate the list of possible slugs for dynamic routes
+  const paths = projects.map((project) => ({
+    params: { slug: project.slug },
+  }));
+
+  return {
+    paths,
+    fallback: false, // Change this to 'true' or 'blocking' if needed
+  }
+}
+
 export async function getStaticProps({
   params,
 }: {
@@ -47,6 +59,7 @@ export async function getStaticProps({
 
   return {
     props: { project },
+    revalidate: 3600,
   };
 }
 
