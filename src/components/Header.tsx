@@ -19,9 +19,6 @@ const Header = () => {
       >
         rm
       </Link>
-
-    
-
       <button
         className="group flex h-6 w-5 flex-col items-center justify-center gap-[6px] transition-all duration-300 hover:scale-125  "
         onClick={handleMenuClick}

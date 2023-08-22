@@ -5,6 +5,7 @@ import { Project } from "@/data/projects";
 import Image from "next/image";
 import useIntersectionObserver from "@/hooks/useIntersectionObserver";
 import { motion } from "framer-motion";
+import LoadingBar from "@/components/LoadingBar";
 
 type PortfolioDetailProps = {
   project: Project;
@@ -15,18 +16,30 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
 
   return (
     <div className="mx-auto mt-[50px] max-w-[1280px] customMd:mt-[133px] lg:mt-[184px]">
-      <div className="absolute left-0 top-0 h-1 w-full bg-customBlack"></div>
-      <p>{project.label}</p>
-      <h1 className="mt-4 text-[60px] font-bold leading-[1] tracking-[-2px] lg:text-[80px]">
-        {project.title}
-      </h1>
+        {/* <LoadingBar backgroundColorClass="bg-customBlack"></LoadingBar> */}
+        <div className="w-full left-0 top-0 absolute bg-customBlack h-1"></div>
+
+      <motion.div
+        initial={{ opacity: 0, y: 0 }}
+        animate={{ opacity: 1, y: 0 }}
+        exit={{ opacity: 1 }}
+        transition={{ duration: .8, delay: 0 }}
+      >
+        <p>{project.label}</p>
+        <h1 className="mt-4 text-[60px] font-bold leading-[1] tracking-[-2px] lg:text-[80px]">
+          {project.title}
+        </h1>
       <div className="mt-6 h-[5px] w-14 bg-customBlack"></div>
+
+      </motion.div>
+
+
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 1, y: -20 }}
-        transition={{ duration: 0.8 }}
+        exit={{ opacity: 1 }}
+        transition={{ duration: .8, delay: 1 }}
       >
         <div className={`relative mt-[40px] overflow-hidden lg:mt-[80px]`}>
           <Image
@@ -50,7 +63,7 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
           </div>
 
           <div className="lg:w-1/2">
-            <p className="mt-8 leading-7 text-customGray text-[15px] lg:mt-[0px]">
+            <p className="mt-8 text-[15px] leading-7 text-customGray lg:mt-[0px]">
               {project.background}
             </p>
 

@@ -19,7 +19,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ project }) => {
 
       <Header />
 
-      <div className="px-6  customMd:px-20 xl:px-36">
+      <div className="px-6 customMd:px-20 xl:px-36">
         <PortfolioDetail project={project} />
         <Footer
           title="See"

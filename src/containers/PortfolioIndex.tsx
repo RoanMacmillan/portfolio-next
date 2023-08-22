@@ -32,7 +32,7 @@ const PortfolioIndex = ({ isLoading }: { isLoading: boolean }) => {
 
   return (
     <>
-      <div className="mx-auto mt-[50px]  max-w-[1280px] justify-between sm:grid sm:grid-cols-2 sm:gap-24 xl:gap-36 lg:mt-[150px]">
+      <div className="mx-auto mt-[50px]  max-w-[1280px] justify-between sm:grid sm:grid-cols-2 sm:gap-24 lg:mt-[150px] xl:gap-36">
         {projects.map((project: Project, index: number) => (
           <div
             key={index}
@@ -44,14 +44,7 @@ const PortfolioIndex = ({ isLoading }: { isLoading: boolean }) => {
               project.title === "Minimal"
                 ? "sm:mt-[-100px] lg:ml-auto lg:mt-[-160px]"
                 : ""
-            }
-
-              
-
-          ${project.title === "Audio" ? "" : ""}
-          
-          
-          `}
+            }${project.title === "Audio" ? "" : ""}`}
           >
             <div
               className={`portfolio-image transition-all ${
@@ -80,7 +73,7 @@ const PortfolioIndex = ({ isLoading }: { isLoading: boolean }) => {
               <h2 className="mt-4 text-xl font-bold text-customBlack lg:mt-6 lg:text-3xl">
                 {project.title}
               </h2>
-              <p className="mt-4 text-customGray lg:mt-8 text-[15px]">
+              <p className="mt-4 text-[15px] text-customGray lg:mt-8">
                 {project.description}
               </p>
             </div>

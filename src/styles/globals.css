@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -10,94 +10,87 @@
   box-sizing: border-box;
 }
 
-
 * {
-    margin: 0;
-    padding: 0;
-  }
+  margin: 0;
+  padding: 0;
+}
 
- 
-  body {
-    font-family: 'Poppins', sans-serif;
-  }
+body {
+  font-family: "Poppins", sans-serif;
+}
 
-  
-  
-  .closeBtn:hover {
-    filter: invert(35%) sepia(97%) saturate(1056%) hue-rotate(137deg) brightness(93%) contrast(101%);
-  }
+.closeBtn:hover {
+  filter: invert(35%) sepia(97%) saturate(1056%) hue-rotate(137deg)
+    brightness(93%) contrast(101%);
+}
 
+.scroll-reveal-container .ttt {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
 
-  .scroll-reveal-container .ttt {
+.scroll-reveal-container .ttt.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.scroll-reveal-container .ttt:nth-child(1) {
+  transition-delay: 0.1s;
+}
+
+.scroll-reveal-container .ttt:nth-child(2) {
+  transition-delay: 0.2s;
+}
+
+.scroll-reveal-container .ttt:nth-child(3) {
+  transition-delay: 0.3s;
+}
+
+.scroll-reveal-container .ttt:nth-child(4) {
+  transition-delay: 0.4s;
+}
+
+.fadeIn {
+  animation: fadeIn 0.4s ease forwards;
+}
+
+.fadeOut {
+  animation: fadeOut 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+  0% {
     opacity: 0;
-    transform: translateY(20px);
-    transition: opacity 0.7s ease, transform 0.7s ease;
   }
-  
-  .scroll-reveal-container .ttt.visible {
+  100% {
     opacity: 1;
-    transform: translateY(0);
   }
-  
-  /* Apply different delays based on index */
-  .scroll-reveal-container .ttt:nth-child(1) {
-    transition-delay: 0.1s;
-  }
-  
-  .scroll-reveal-container .ttt:nth-child(2) {
-    transition-delay: 0.2s;
-  }
-  
-  .scroll-reveal-container .ttt:nth-child(3) {
-    transition-delay: 0.3s;
-  }
+}
 
-  .scroll-reveal-container .ttt:nth-child(4) {
-    transition-delay: .4s;
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
   }
-
-
-
-  .fadeIn {
-    animation: fadeIn .4s ease forwards;
-  }
-  
-  .fadeOut {
-    animation: fadeOut .4s ease forwards;
-
-  }
-
-  @keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-  }
-  
-  @keyframes fadeOut {
-    0% { opacity: 1; }
-    100% { opacity: 0; }
-  }
-
-
-  .loadingTitle {
+  100% {
     opacity: 0;
-    transform: translateY(20px);
-
-    animation: fadeInScale .7s ease-in-out forwards;
   }
-  
-  @keyframes fadeInScale {
-    to {
-      opacity: 1;
-      transform: translateY(0px);
-    }
-  }
+}
 
+.loadingTitle {
+  opacity: 0;
+  transform: translateY(20px);
 
-  .modal-open {
-    overflow: hidden;
-  }
-  
+  animation: fadeInScale 0.7s ease-in-out forwards;
+}
 
-  .test {
-    overflow-wrap: break-word;
+@keyframes fadeInScale {
+  to {
+    opacity: 1;
+    transform: translateY(0px);
   }
+}
+
+.modal-open {
+  overflow: hidden;
+}

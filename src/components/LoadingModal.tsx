@@ -1,13 +1,12 @@
 import React, { useEffect } from "react";
 import LoadingBar from "./LoadingBar";
 
-
 const LoadingModal = ({ isLoading }: { isLoading: boolean }) => {
   useEffect(() => {
     if (isLoading) {
       document.body.classList.add("modal-open");
     } else {
-      document.body.classList.remove("modal-open"); 
+      document.body.classList.remove("modal-open");
     }
 
     return () => {
@@ -23,16 +22,13 @@ const LoadingModal = ({ isLoading }: { isLoading: boolean }) => {
       
       `}
     >
-      <div className={`loadingTitle text-[50px] customMd:text-[80px] font-light text-white`}>
+      <div
+        className={`loadingTitle text-[50px] font-light text-white customMd:text-[80px]`}
+      >
         Loading...
       </div>
 
-
-<LoadingBar backgroundColorClass="bg-customEmerald" />
-
-
-
-
+      <LoadingBar backgroundColorClass="bg-customEmerald" />
     </div>
   );
 };

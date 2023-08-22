@@ -34,7 +34,7 @@ const SkillsGrid = () => {
                 alt={skill.logo}
                 width={60}
                 height={60}
-                className={`grid-image overflow-hidden transition-all duration-1000`}
+                className={`overflow-hidden`}
                 priority={true}
               />
             </motion.div>
