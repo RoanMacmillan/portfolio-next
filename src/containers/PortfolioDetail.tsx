@@ -16,30 +16,27 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
 
   return (
     <div className="mx-auto mt-[50px] max-w-[1280px] customMd:mt-[133px] lg:mt-[184px]">
-        {/* <LoadingBar backgroundColorClass="bg-customBlack"></LoadingBar> */}
-        <div className="w-full left-0 top-0 absolute bg-customBlack h-1"></div>
+      {/* <LoadingBar backgroundColorClass="bg-customBlack"></LoadingBar> */}
+      <div className="absolute left-0 top-0 h-1 w-full bg-customBlack"></div>
 
       <motion.div
         initial={{ opacity: 0, y: 0 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 1 }}
-        transition={{ duration: .8, delay: 0 }}
+        transition={{ duration: 0.8, delay: 0 }}
       >
         <p>{project.label}</p>
         <h1 className="mt-4 text-[60px] font-bold leading-[1] tracking-[-2px] lg:text-[80px]">
           {project.title}
         </h1>
-      <div className="mt-6 h-[5px] w-14 bg-customBlack"></div>
-
+        <div className="mt-6 h-[5px] w-14 bg-customBlack"></div>
       </motion.div>
-
-
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 1 }}
-        transition={{ duration: .8, delay: 1 }}
+        transition={{ duration: 1.25, delay: 1 }}
       >
         <div className={`relative mt-[40px] overflow-hidden lg:mt-[80px]`}>
           <Image
@@ -69,7 +66,12 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
 
             <div className="mt-8 flex gap-8 font-semibold">
               <div>
-                <a className="group" href={project.demoURL}>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group"
+                  href={project.demoURL}
+                >
                   View Site
                   <div className="relative mt-[5px] h-[2px] w-24 bg-gray-200">
                     <div className=" absolute left-0 top-0 h-[2px] w-0 bg-customEmerald transition-all duration-300 group-hover:w-full"></div>
@@ -77,7 +79,8 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
                 </a>
               </div>
               <div>
-                <a className="group" href={project.codeURL}>
+                <a target="_blank"
+                  rel="noopener noreferrer" className="group" href={project.codeURL}>
                   View Code
                   <div className="relative mt-[5px] h-[2px] w-24 bg-gray-200">
                     <div className=" absolute left-0 top-0 h-[2px] w-0 bg-customEmerald transition-all duration-300 group-hover:w-full"></div>
