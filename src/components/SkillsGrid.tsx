@@ -27,7 +27,7 @@ const SkillsGrid = () => {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 1, y: -20 }}
-              transition={{ duration: 0.8, delay: 0.4 }}
+              transition={{ duration: 0.8, delay: .4 }}
             >
               <Image
                 src={skill.logo}
