@@ -2,11 +2,15 @@ import React, { RefObject } from "react";
 import Image from "next/image";
 import Ribbon from "../../public/assets/icons/ribbon.svg";
 import useIntersectionObserver from "@/hooks/useIntersectionObserver";
+import Link from "next/link";
 
 const HomeBtn = () => {
   const [dividerRef, dividerRefVisible] = useIntersectionObserver();
 
   return (
+
+    <Link href='/'>
+
     <div
       ref={dividerRef}
       className={`group absolute bottom-[150px] hidden -rotate-90 cursor-pointer items-center gap-4 customXXL:flex ${
@@ -26,6 +30,7 @@ const HomeBtn = () => {
         />
       </div>
     </div>
+    </Link>
   );
 };
 

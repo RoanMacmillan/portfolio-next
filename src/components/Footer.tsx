@@ -44,7 +44,8 @@ const Footer = ({ title, emphasizedText, footerLink, link }: FooterProps) => {
         </Link>
       </div>
 
-      <nav className="mt-[150px]">
+      <nav className="mt-[150px] flex justify-between items-end">
+      <div>
         <div className="sm:flex sm:items-center sm:gap-2  ">
           <p className="text-sm text-customGray">Follow me</p>
           <div className="mt-6 flex  flex-col text-xl font-medium  text-customBlack sm:mt-0 sm:flex-row sm:gap-2 sm:text-sm">
@@ -86,6 +87,11 @@ const Footer = ({ title, emphasizedText, footerLink, link }: FooterProps) => {
         <p className="mt-6 text-sm text-customGray  sm:mt-0 ">
           © 2023 Roan Macmillan. Skill Icons created by Freepik - Flaticon
         </p>
+
+</div>
+
+{/* <div className="text-sm text-customGray">Edinburgh 11:48</div> */}
+
       </nav>
     </footer>
   );

@@ -23,7 +23,7 @@ const about = () => {
         <AboutHero />
         <SkillsGrid />
         <ServicesContainer />
-        <div className="mx-auto max-w-[1440px] px-4 customMd:px-20 xl:px-36">
+        <div className="mx-auto max-w-[1584px] px-4 xl:px-36 customMd:px-20 ">
           <Footer
             title="Let's"
             emphasizedText="Talk"

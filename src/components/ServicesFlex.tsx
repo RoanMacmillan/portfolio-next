@@ -37,7 +37,7 @@ const ScrollReveal = ({ children }: { children: React.ReactNode }) => {
 const ServicesFlex = () => {
   return (
     <ScrollReveal>
-      <div className="mx-auto mt-8 flex max-w-[1440px] flex-col gap-4 customMd:px-[80px] lg:mt-[72px] justify-between lg:flex-row lg:gap-6 px-0 lg:px-20">
+      <div className="mx-auto mt-8 flex max-w-[1584px] xl:px-36 flex-col gap-4 customMd:px-[80px] lg:mt-[72px] justify-between lg:flex-row lg:gap-6 px-0 lg:px-20">
         {services.map((service: Service, index: number) => (
           <div key={index} className="ttt">
             <div className="border border-outlineGray px-6 py-[40px] customMd:p-[40px]">

@@ -16,8 +16,8 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
 
   return (
     <div className="mx-auto mt-[50px] max-w-[1280px] customMd:mt-[133px] lg:mt-[184px]">
-      {/* <LoadingBar backgroundColorClass="bg-customBlack"></LoadingBar> */}
-      <div className="absolute left-0 top-0 h-1 w-full bg-customBlack"></div>
+      <LoadingBar backgroundColorClass="bg-customBlack"></LoadingBar>
+      {/* <div className="absolute left-0 top-0 h-1 w-full bg-customBlack"></div> */}
 
       <motion.div
         initial={{ opacity: 0, y: 0 }}
@@ -44,7 +44,6 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
             alt={project.detailStatic1}
             width={2858}
             height={1372}
-            className=""
             priority={true}
           />
         </div>
