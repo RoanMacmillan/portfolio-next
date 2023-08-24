@@ -1,7 +1,6 @@
 import React from "react";
 import Form from "@/components/Form";
-import Image from "next/image";
-import mail from "../../public/assets/icons/icon-mail.svg";
+import ContactFlex from "@/components/ContactFlex";
 
 const FormContainer = () => {
   return (
@@ -15,24 +14,17 @@ const FormContainer = () => {
       <div className="mt-12 justify-between customMd:flex lg:mt-16">
         <div className="customMd:w-[40%]">
           <h2 className="text-2xl font-bold">Contact form</h2>
-          <p className="mt-4 text-customGray text-[15px]">
+          <p className="mt-4 text-[15px] text-customGray">
             Got a project in mind? Find my contact info below or feel free to
             fill out the form below with your questions.
           </p>
         </div>
 
-       
-          <Form />
+        <Form />
       </div>
 
-      <div className="mt-20 customMd:mt-32">
-        <Image src={mail} alt={mail} width={48} height={48} />
+      <ContactFlex />
 
-        <h3 className="mt-6 text-lg font-bold">roanmacmillan@hotmail.com</h3>
-        <p className="mt-2 text-customGray text-[15px]">
-          Send me a message and I will reach out as soon as possible.
-        </p>
-      </div>
       <div className="mt-[60px] block h-[1px] w-full bg-gray-200 sm:hidden"></div>
     </div>
   );

@@ -94,3 +94,7 @@ body {
 .modal-open {
   overflow: hidden;
 }
+
+.test123 {
+  word-break: break-word;
+}
