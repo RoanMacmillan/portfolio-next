@@ -9,6 +9,7 @@ exports.handler = async (event) => {
   const YOUR_EMAIL_PASSWORD = process.env.YOUR_EMAIL_PASSWORD;
 
   const transporter = nodemailer.createTransport({
+    debug: true,
     // Configure your email service here
     service: "hotmail", // Use your email service here
     auth: {
@@ -32,9 +33,10 @@ exports.handler = async (event) => {
       body: JSON.stringify({ message: "Email sent successfully" }),
     };
   } catch (error) {
+    console.error("An error occurred:", error);
     return {
       statusCode: 500,
-      body: JSON.stringify({ message: "Error sending email" }),
+      body: JSON.stringify({ message: "Error sending email", error: error.message }),
     };
   }
 };
