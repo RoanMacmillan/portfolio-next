@@ -30,7 +30,7 @@ const Form: React.FC = () => {
       // });
 
 
-      const response = await axios.post("/.netlify/functions/submitForm", formData);
+      const response = await axios.post("/.netlify/functions/sendEmail", formData);
 
   
       if (response.status === 200) {
