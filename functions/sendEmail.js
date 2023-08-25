@@ -19,9 +19,10 @@ exports.handler = async (event) => {
 
   const mailOptions = {
     from: formData.email,
-    to: "your@email.com",
-    subject: "New message from your website",
+    to: YOUR_EMAIL,
+    subject: `New message from ${formData.name}`,
     text: formData.message,
+    replyTo: formData.email,
   };
 
   try {
