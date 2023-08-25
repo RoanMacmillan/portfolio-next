@@ -28,7 +28,7 @@ const Form: React.FC = () => {
         body: JSON.stringify(formData),
       });
   
-      if (response.ok) {
+      if (response.status === 200) {
         console.log("Email sent successfully");
         // Perform any other success actions here
       } else {
