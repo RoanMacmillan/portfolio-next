@@ -19,11 +19,28 @@ const Form: React.FC = () => {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // You can perform form submission or data handling here with formData state.
-    console.log("Form data:", formData);
+  
+    try {
+      const response = await fetch("/.netlify/functions/sendEmail", {
+        method: "POST",
+        body: JSON.stringify(formData),
+      });
+  
+      if (response.ok) {
+        console.log("Email sent successfully");
+        // Perform any other success actions here
+      } else {
+        console.error("Failed to send email");
+        // Handle error scenario
+      }
+    } catch (error) {
+      console.error("An error occurred:", error);
+      // Handle error scenario
+    }
   };
+  
 
   return (
     <form onSubmit={handleSubmit} className="mt-10 customMd:mt-0 customMd:w-1/2 customMd:ml-0">
