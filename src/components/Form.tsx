@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
+import axios from "axios";
 
 
 const Form: React.FC = () => {
@@ -23,10 +24,14 @@ const Form: React.FC = () => {
     e.preventDefault();
   
     try {
-      const response = await fetch("/.netlify/functions/sendEmail", {
-        method: "POST",
-        body: JSON.stringify(formData),
-      });
+      // const response = await fetch("/.netlify/functions/sendEmail", {
+      //   method: "POST",
+      //   body: JSON.stringify(formData),
+      // });
+
+
+      const response = await axios.post("/.netlify/functions/submitForm", formData);
+
   
       if (response.status === 200) {
         console.log("Email sent successfully");
