@@ -33,7 +33,7 @@ function isRateLimited(ip) {
   return true;
 }
 
-exports.handler = async (event) => {
+exports.handler = async (event, context) => {
 
 
   if (event.httpMethod !== "POST") {
@@ -78,7 +78,6 @@ exports.handler = async (event) => {
   };
 
   try {
-    console.log("Sending email:", mailOptions); // Add this line
 
     await transporter.sendMail(mailOptions);
     return {
