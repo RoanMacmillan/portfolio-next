@@ -3,7 +3,6 @@ import FormContainer from "@/containers/FormContainer";
 import Footer from "@/components/Footer";
 import ContactHero from "@/containers/ContactHero";
 import ScrollToTop from "@/components/ScrollToTop";
-import { motion } from "framer-motion";
 import LoadingBar from "@/components/LoadingBar";
 import Header from "@/components/Header";
 import PageTransition from "@/components/PageTransition";

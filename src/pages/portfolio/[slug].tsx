@@ -1,5 +1,4 @@
 import React from "react";
-import { useRouter } from "next/router";
 import projects, { Project } from "@/data/projects";
 import PortfolioDetail from "@/containers/PortfolioDetail";
 import Footer from "@/components/Footer";
