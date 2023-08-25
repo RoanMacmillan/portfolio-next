@@ -14,16 +14,14 @@ function isRateLimited(ip) {
   const requests = requestCounts[ip] || []; 
 
   // Remove requests older than the rate limit window
-  while (requests.length > 0 && requests[0] < currentTime - rateLimitWindow) {
-    requests.shift();
-  }
+  const validRequests = requests.filter(time => time >= currentTime - rateLimitWindow);
+  requestCounts[ip] = validRequests;
 
-  console.log(`IP: ${ip}, requests count: ${requests.length}`); // Log the number of requests from the IP address
+  console.log(`IP: ${ip}, requests count: ${validRequests.length}`); // Log the number of valid requests from the IP address
 
   // If the number of remaining requests is less than the max allowed, record the new request and return false (not rate-limited)
-  if (requests.length < maxRequestsPerWindow) {
-    requests.push(currentTime);
-    requestCounts[ip] = requests;
+  if (validRequests.length < maxRequestsPerWindow) {
+    validRequests.push(currentTime);
     console.log(`Not rate-limited: ${ip}`); // Log that the IP is not rate-limited
     return false;
   }
