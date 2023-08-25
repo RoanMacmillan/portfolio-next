@@ -19,7 +19,7 @@ exports.handler = async (event) => {
   });
 
   const mailOptions = {
-    from: formData.email,
+    from: YOUR_EMAIL,
     to: YOUR_EMAIL,
     subject: `New message from ${formData.name}`,
     text: formData.message,
