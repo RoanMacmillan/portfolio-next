@@ -4,6 +4,12 @@ import Image from "next/image";
 import circles from "../../public/assets/icons/join.svg";
 
 const ServicesContainer = () => {
+
+
+  
+
+
+
   return (
     <div id="scrollTarget" className="mt-[60px] bg-customBlack px-6 py-8 customMd:px-[0px] customMd:pb-[100px] customMd:pt-[64px] customMd:mt-[100px]">
       <div className="mx-auto max-w-[1584px] xl:px-36 px-0 customMd:px-20">

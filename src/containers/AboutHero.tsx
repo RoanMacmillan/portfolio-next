@@ -1,15 +1,12 @@
-import React from "react";
+import React, { useState } from "react";
 
 const AboutHero = () => {
-
-
   const handleScroll = () => {
     const scrollTarget = document.getElementById("scrollTarget");
     if (scrollTarget) {
       scrollTarget.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
-
 
   return (
     <div className="relative  mx-auto mt-[50px] px-6 customMd:mt-[133px] customMd:px-20 lg:mt-[184px] lg:max-w-[1584px] xl:px-36">
@@ -25,11 +22,10 @@ const AboutHero = () => {
           Hi, I'm Roan Macmillan. I'm a frontend developer looking for a new
           role. I'm based in Edinburgh and open to working remotely.
         </p>
-        <button onClick={handleScroll} className="text-left group">
+        <button onClick={handleScroll} className="group text-left">
           <p className="mt-[30px] font-semibold">Read More</p>
-          <div className="mt-[5px] h-[2px] w-24 bg-gray-200 relative">
-
-            <div className="absolute h-[2px] left-0 top-0 bg-customEmerald w-0 transition-all duration-300 group-hover:w-full" ></div>
+          <div className="relative mt-[5px] h-[2px] w-24 bg-gray-200">
+            <div className="absolute left-0 top-0 h-[2px] w-0 bg-customEmerald transition-all duration-300 group-hover:w-full"></div>
           </div>
         </button>
       </div>

@@ -26,7 +26,7 @@ const Form: React.FC = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="mt-10 customMd:mt-0 customMd:w-1/2 customMd:ml-0">
+    <form onSubmit={handleSubmit} className="mt-10 customMd:mt-0 customMd:w-1/2 customMd:ml-0" netlify>
 
 <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -83,7 +83,7 @@ className="border-b-2 border-customBlack py-4 outline-none mt-1 text-sm"
         />
       </div>
 
-      <button disabled className="mt-8  cursor-not-allowed bg-customBlack w-[150px] h-[45px] hover:bg-customWhite hover:text-customBlack border-customBlack border-[2px] transition-all duration-300 text-customWhite font-semibold customMd:mt-16" type="submit">Send Now</button>
+      <button className="mt-8 bg-customBlack w-[150px] h-[45px] hover:bg-customWhite hover:text-customBlack border-customBlack border-[2px] transition-all duration-300 text-customWhite font-semibold customMd:mt-16" type="submit">Send Now</button>
     
     </motion.div>
     

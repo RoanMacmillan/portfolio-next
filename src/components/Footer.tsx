@@ -36,7 +36,7 @@ const Footer = ({ title, emphasizedText, footerLink, link }: FooterProps) => {
           <span className="font-bold  lg:ml-[10px]">{emphasizedText}</span>
         </h2>
 
-        <Link href={link} className="group font-semibold">
+        <Link href={link} className="group font-semibold flex flex-col w-20">
           {footerLink}
           <div className="relative mt-[5px] h-[2px] w-20 bg-gray-200">
             <div className=" absolute left-0 top-0 h-[2px] w-0 bg-customEmerald transition-all duration-300 group-hover:w-full"></div>
