@@ -100,7 +100,7 @@ className="border-b-2 border-customBlack py-4 outline-none mt-1 text-sm"
         />
       </div>
 
-      <button disabled className="mt-8 bg-customBlack w-[150px] h-[45px] hover:bg-customWhite hover:text-customBlack border-customBlack border-[2px] transition-all duration-300 text-customWhite font-semibold customMd:mt-16" type="submit">Send Now</button>
+      <button  className="mt-8 bg-customBlack w-[150px] h-[45px] hover:bg-customWhite hover:text-customBlack border-customBlack border-[2px] transition-all duration-300 text-customWhite font-semibold customMd:mt-16" type="submit">Send Now</button>
     
     </motion.div>
     
