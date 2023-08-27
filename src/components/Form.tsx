@@ -64,11 +64,11 @@ const Form: React.FC = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-  
+
     const nameError = validateName(formData.name);
     const emailError = validateEmail(formData.email);
     const messageError = validateMessage(formData.message);
-  
+
     if (nameError || emailError || messageError) {
       setErrors({
         ...errors,
@@ -78,75 +78,60 @@ const Form: React.FC = () => {
       });
       return;
     }
-  
+
     setIsLoading(true);
-  
+
     try {
-      const startTime = new Date().getTime(); // Record the start time
-  
       const response = await axios.post(
         "/.netlify/functions/sendEmail",
         formData
       );
-  
-      const endTime = new Date().getTime(); // Record the end time
-  
+
       if (response.status === 200) {
         console.log("Email sent successfully");
-  
+
         setFormData((prevFormData) => ({
           ...prevFormData,
           message: "",
         }));
-  
+
         setErrors({
-          name: "",
+          name: "", // Initialize with an empty string
           email: "",
           message: "",
         });
-  
-        // Calculate the time taken for the request
-        const requestDuration = endTime - startTime;
-  
+
         setModalVisible(true);
         setModalContent("success");
-  
-        // Set the animation duration for the loading bar based on requestDuration
-        const loadingBar = document.querySelector(".loading-bar") as HTMLElement;
-    loadingBar.style.setProperty(
-      "--animation-duration",
-      `${requestDuration}ms`
-    );
-  
+
         // Perform any other success actions here
       } else {
         console.error("Failed to send email");
-  
+
         setErrors({
-          name: "",
+          name: "", // Initialize with an empty string
           email: "",
           message: "",
         });
-  
+
         // Handle error scenario
       }
     } catch (error) {
       console.error("An error occurred:", error);
       setModalContent("error");
       setModalVisible(true);
-  
+
       setErrors({
-        name: "",
+        name: "", // Initialize with an empty string
         email: "",
         message: "",
       });
-  
+
       // Handle error scenario
     } finally {
       setIsLoading(false);
     }
   };
-  
 
   return (
     <form
@@ -234,9 +219,9 @@ const Form: React.FC = () => {
         </button>
       </motion.div>
 
-        {isLoading &&
-      <div className="fixed left-0 w-full h-1 bg-customEmerald top-0 loading-bar"></div>
-        }
+        {/* {isLoading &&
+      <div className="fixed left-0 w-full h-1 bg-customEmerald top-0"></div>
+        } */}
 
       {modalVisible && (
         <FormModal
