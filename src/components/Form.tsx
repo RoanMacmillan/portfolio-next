@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { motion } from "framer-motion";
 import axios from "axios";
-
+import FormModal from "./FormModal";
 
 interface FormData {
   name: string;
@@ -11,12 +11,18 @@ interface FormData {
 
 const Form: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [errors, setErrors] = useState({
-    name: '', // Initialize with an empty string
-    email: '',
-    message: '',
-  });
+  const [modalVisible, setModalVisible] = useState(false);
+  const [modalContent, setModalContent] = useState("success");
 
+  const closeModal = () => {
+    setModalVisible(false);
+  };
+
+  const [errors, setErrors] = useState({
+    name: "", // Initialize with an empty string
+    email: "",
+    message: "",
+  });
 
   const [formData, setFormData] = useState({
     name: "",
@@ -24,8 +30,7 @@ const Form: React.FC = () => {
     message: "",
   });
 
-
-    const validateName = (name: string) => {
+  const validateName = (name: string) => {
     if (name.trim() === "") {
       return "* Can't be blank";
     }
@@ -40,14 +45,12 @@ const Form: React.FC = () => {
     return "";
   };
 
-
   const validateMessage = (message: string) => {
     if (message.trim() === "" || message.trim().length < 10) {
       return "* Please enter at least 10 characters";
     }
     return "";
   };
-  
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -72,15 +75,11 @@ const Form: React.FC = () => {
         name: nameError,
         email: emailError,
         message: messageError,
-       
       });
       return;
     }
 
-
     setIsLoading(true);
-
-
 
     try {
       const response = await axios.post(
@@ -91,33 +90,46 @@ const Form: React.FC = () => {
       if (response.status === 200) {
         console.log("Email sent successfully");
 
-
         setFormData((prevFormData) => ({
           ...prevFormData,
           message: "",
         }));
 
-        
+        setErrors({
+          name: "", // Initialize with an empty string
+          email: "",
+          message: "",
+        });
+
+        setModalVisible(true);
+        setModalContent("success");
 
         // Perform any other success actions here
       } else {
         console.error("Failed to send email");
+
+        setErrors({
+          name: "", // Initialize with an empty string
+          email: "",
+          message: "",
+        });
+
         // Handle error scenario
       }
     } catch (error) {
       console.error("An error occurred:", error);
+      setModalContent("error");
+      setModalVisible(true);
+
+      setErrors({
+        name: "", // Initialize with an empty string
+        email: "",
+        message: "",
+      });
+
       // Handle error scenario
     } finally {
-
-
       setIsLoading(false);
-
-      // setErrors({
-      //   name: '', // Initialize with an empty string
-      //   email: '',
-      //   message: '',
-      // })
-
     }
   };
 
@@ -133,10 +145,9 @@ const Form: React.FC = () => {
         transition={{ duration: 0.8 }}
       >
         <div className="flex justify-between">
-          <div className="flex w-[45%] flex-col relative">
+          <div className="relative flex w-[45%] flex-col">
             <label className="text-base font-bold" htmlFor="name">
               Name
-              
             </label>
             <input
               type="text"
@@ -148,13 +159,14 @@ const Form: React.FC = () => {
               className="mt-1 border-b-2 border-customBlack py-4 text-sm outline-none"
             />
 
-{errors.name && (
-    <div className="text-red-500 text-xs top-[-25px] absolute">{errors.name}</div>
-  )}
-
+            {errors.name && (
+              <div className="absolute top-[-25px] text-xs text-red-500">
+                {errors.name}
+              </div>
+            )}
           </div>
 
-          <div className="flex w-[45%] flex-col relative">
+          <div className="relative flex w-[45%] flex-col">
             <label className="text-base font-bold" htmlFor="email">
               Email
             </label>
@@ -168,14 +180,15 @@ const Form: React.FC = () => {
               className="mt-1 border-b-2 border-customBlack py-4 text-sm outline-none"
             />
 
-{errors.email && (
-    <div className="text-red-500 text-xs top-[-25px] absolute">{errors.email}</div>
-  )}
-
+            {errors.email && (
+              <div className="absolute top-[-25px] text-xs text-red-500">
+                {errors.email}
+              </div>
+            )}
           </div>
         </div>
 
-        <div className="mt-6 flex flex-col customMd:mt-12 relative">
+        <div className="relative mt-6 flex flex-col customMd:mt-12">
           <label className="text-base font-bold" htmlFor="message">
             Message
           </label>
@@ -188,21 +201,31 @@ const Form: React.FC = () => {
             className="border-b-2  border-customBlack pb-12 pt-6 text-sm outline-none customMd:pb-24"
           />
 
-{errors.message && (
-    <div className="text-red-500 text-xs top-[-25px] absolute">{errors.message}</div>
-  )}
-
-
+          {errors.message && (
+            <div className="absolute top-[-25px] text-xs text-red-500">
+              {errors.message}
+            </div>
+          )}
         </div>
 
         <button
-          className={` ${isLoading ? 'cursor-not-allowed' : 'cursor-pointer'} mt-8 h-[45px] w-[150px] border-[2px] border-customBlack bg-customBlack font-semibold text-customWhite transition-all duration-300 hover:bg-customWhite hover:text-customBlack customMd:mt-16`}
+          className={` ${
+            isLoading ? "cursor-not-allowed" : "cursor-pointer"
+          } mt-8 h-[45px] w-[150px] border-[2px] border-customBlack bg-customBlack font-semibold text-customWhite transition-all duration-300 hover:bg-customWhite hover:text-customBlack customMd:mt-16`}
           type="submit"
           disabled={isLoading}
         >
-          {isLoading ? 'Loading...' : 'Send Now'}
+          {isLoading ? "Loading..." : "Send Now"}
         </button>
       </motion.div>
+
+      {modalVisible && (
+        <FormModal
+          modalVisible={modalVisible}
+          closeModal={closeModal}
+          modalContent={modalContent}
+        />
+      )}
     </form>
   );
 };

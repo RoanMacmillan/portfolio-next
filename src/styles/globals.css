@@ -99,3 +99,19 @@ body {
   word-break: break-word;
 }
 
+
+.formModal {
+  background-color: rgba(0, 0, 0, 0.75); /* Opaque black with 70% opacity */
+  
+}
+
+
+.errorIcon {
+
+  filter: invert(15%) sepia(95%) saturate(7028%) hue-rotate(358deg) brightness(91%) contrast(122%);
+}
+
+.successIcon {
+
+  filter: invert(44%) sepia(23%) saturate(6981%) hue-rotate(141deg) brightness(89%) contrast(101%);
+}
