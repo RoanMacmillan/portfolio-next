@@ -188,7 +188,7 @@ const Form: React.FC = () => {
           </div>
         </div>
 
-        <div className="relative mt-6 flex flex-col customMd:mt-12">
+        <div className="relative mt-12 flex flex-col customMd:mt-12">
           <label className="text-base font-bold" htmlFor="message">
             Message
           </label>
