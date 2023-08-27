@@ -3,7 +3,18 @@ import success from "../../public/assets/icons/check.svg";
 import fail from "../../public/assets/icons/error.svg";
 import Image from "next/image";
 
-const FormModal = ({ closeModal, modalVisible, modalContent }) => {
+
+interface FormModalProps {
+    closeModal: () => void;
+    modalVisible: boolean;
+    modalContent: string; // You can make this type more specific if needed
+  }
+
+  const FormModal: React.FC<FormModalProps> = ({
+    closeModal,
+    modalVisible,
+    modalContent,
+  }) => {
   console.log("Modal visible:", modalVisible); // Add this line
   const renderModalContent = () => {
     if (modalContent === "success") {
