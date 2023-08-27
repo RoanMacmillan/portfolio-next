@@ -2,14 +2,52 @@ import React, { useState } from "react";
 import { motion } from "framer-motion";
 import axios from "axios";
 
+
+interface FormData {
+  name: string;
+  email: string;
+  message: string;
+}
+
 const Form: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
+  const [errors, setErrors] = useState({
+    name: '', // Initialize with an empty string
+    email: '',
+    message: '',
+  });
+
 
   const [formData, setFormData] = useState({
     name: "",
     email: "",
     message: "",
   });
+
+
+    const validateName = (name: string) => {
+    if (name.trim() === "") {
+      return "* Can't be blank";
+    }
+    return "";
+  };
+
+  const validateEmail = (email: string) => {
+    const emailRegex = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i;
+    if (!email.match(emailRegex)) {
+      return "* Invalid Email";
+    }
+    return "";
+  };
+
+
+  const validateMessage = (message: string) => {
+    if (message.trim() === "" || message.trim().length < 10) {
+      return "* Please enter at least 10 characters";
+    }
+    return "";
+  };
+  
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -24,6 +62,21 @@ const Form: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
+    const nameError = validateName(formData.name);
+    const emailError = validateEmail(formData.email);
+    const messageError = validateMessage(formData.message);
+
+    if (nameError || emailError || messageError) {
+      setErrors({
+        ...errors,
+        name: nameError,
+        email: emailError,
+        message: messageError,
+       
+      });
+      return;
+    }
+
 
     setIsLoading(true);
 
@@ -37,6 +90,15 @@ const Form: React.FC = () => {
 
       if (response.status === 200) {
         console.log("Email sent successfully");
+
+
+        setFormData((prevFormData) => ({
+          ...prevFormData,
+          message: "",
+        }));
+
+        
+
         // Perform any other success actions here
       } else {
         console.error("Failed to send email");
@@ -49,6 +111,12 @@ const Form: React.FC = () => {
 
 
       setIsLoading(false);
+
+      // setErrors({
+      //   name: '', // Initialize with an empty string
+      //   email: '',
+      //   message: '',
+      // })
 
     }
   };
@@ -65,9 +133,10 @@ const Form: React.FC = () => {
         transition={{ duration: 0.8 }}
       >
         <div className="flex justify-between">
-          <div className="flex w-[45%] flex-col">
+          <div className="flex w-[45%] flex-col relative">
             <label className="text-base font-bold" htmlFor="name">
               Name
+              
             </label>
             <input
               type="text"
@@ -78,9 +147,14 @@ const Form: React.FC = () => {
               placeholder="Your Name"
               className="mt-1 border-b-2 border-customBlack py-4 text-sm outline-none"
             />
+
+{errors.name && (
+    <div className="text-red-500 text-xs top-[-25px] absolute">{errors.name}</div>
+  )}
+
           </div>
 
-          <div className="flex w-[45%] flex-col">
+          <div className="flex w-[45%] flex-col relative">
             <label className="text-base font-bold" htmlFor="email">
               Email
             </label>
@@ -93,10 +167,15 @@ const Form: React.FC = () => {
               placeholder="Your Email"
               className="mt-1 border-b-2 border-customBlack py-4 text-sm outline-none"
             />
+
+{errors.email && (
+    <div className="text-red-500 text-xs top-[-25px] absolute">{errors.email}</div>
+  )}
+
           </div>
         </div>
 
-        <div className="mt-6 flex flex-col customMd:mt-12">
+        <div className="mt-6 flex flex-col customMd:mt-12 relative">
           <label className="text-base font-bold" htmlFor="message">
             Message
           </label>
@@ -108,6 +187,12 @@ const Form: React.FC = () => {
             placeholder="How Can I help?"
             className="border-b-2  border-customBlack pb-12 pt-6 text-sm outline-none customMd:pb-24"
           />
+
+{errors.message && (
+    <div className="text-red-500 text-xs top-[-25px] absolute">{errors.message}</div>
+  )}
+
+
         </div>
 
         <button
