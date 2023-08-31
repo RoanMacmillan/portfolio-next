@@ -127,9 +127,8 @@ animation-delay: 1.1s;
 
 .brightnessHero {
 
-  /* object-position: 0px 0px; */
+  /* object-position: 0px -40px; */
   animation: fadeIn .4s ease forwards;
-  /* transform: translateY(); */
 
 }
 

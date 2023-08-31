@@ -1,7 +1,7 @@
 import React from 'react';
 import Image from 'next/image';
 import { Project } from "@/data/projects";
-import heroImg from '../../public/assets/images/photos/slughero1.webp';
+import heroImg from '../../public/assets/images/photos/slughero3.png';
 import { motion } from "framer-motion";
 
 
@@ -51,7 +51,7 @@ const SlugHero: React.FC<PortfolioDetailProps> = ({ project }) => {
         
 
         <div className="vignette-image-container containerHeight h-[900px] w-full relative">
-        <Image src={heroImg} alt="Hero Image" priority className='object-cover w-full h-full brightnessHero grayscale-[15%] transform scale-x-[-1]' />
+        <Image src={heroImg} alt="Hero Image" priority className='object-cover w-full h-full brightnessHero grayscale-[15%] scale-x-[-1]' />
         <div className='w-full h-full absolute top-0 left-0 bg-black opacity-[0%] fadeInOverlay'></div>
         {/* <div className="vignette-overlay"></div> */}
         </div>
