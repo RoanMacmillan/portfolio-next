@@ -14,7 +14,7 @@ const contact = () => {
       <ScrollToTop />
       <HomeBtn />
 
-      <Header />
+      <Header colorScheme="black" />
       <PageTransition>
         <div className="px-6 customMd:px-20 xl:px-36">
           <LoadingBar backgroundColorClass="bg-customBlack" />

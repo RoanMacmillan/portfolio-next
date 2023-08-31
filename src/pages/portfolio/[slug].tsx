@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ScrollToTop from "@/components/ScrollToTop";
 import HomeBtn from "@/components/HomeBtn";
+import SlugHero from "@/containers/SlugHero";
 
 interface PortfolioItemProps {
   project: Project;
@@ -16,7 +17,9 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ project }) => {
       <ScrollToTop />
       <HomeBtn />
 
-      <Header />
+      <Header colorScheme="white" />
+
+      <SlugHero project={project} />
 
       <div className="px-6 customMd:px-20 xl:px-36">
         <PortfolioDetail project={project} />

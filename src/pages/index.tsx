@@ -28,7 +28,7 @@ const Home = () => {
       <HomeBtn />
 
       <div className={`${isLoading ? "invisible" : "visible"}`}>
-        <Header />
+        <Header colorScheme="black" />
       </div>
 
       <PageTransition>

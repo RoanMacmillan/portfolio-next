@@ -91,6 +91,48 @@ body {
   }
 }
 
+
+.fadeInOverlay {
+
+  animation: fadeInOverlay .8s ease forwards;
+  animation-delay: .4s;
+
+}
+
+@keyframes fadeInOverlay {
+
+  to {
+
+    opacity: .29
+  }
+  
+}
+
+
+.containerHeight {
+
+height: 1000px;
+animation: animateHeight 0.8s ease-in-out forwards;
+animation-delay: 1.1s;
+
+}
+
+@keyframes animateHeight {
+
+  to {
+
+    height: 900px;
+  }
+}
+
+.brightnessHero {
+
+  /* object-position: 0px 0px; */
+  animation: fadeIn .4s ease forwards;
+  /* transform: translateY(); */
+
+}
+
 .modal-open {
   overflow: hidden;
 }
@@ -116,3 +158,24 @@ body {
   filter: invert(44%) sepia(23%) saturate(6981%) hue-rotate(141deg) brightness(89%) contrast(101%);
 }
 
+.mouse {
+  filter: brightness(0) invert(1);
+}
+
+
+.vignette-image-container {
+  position: relative;
+  display: inline-block;
+}
+
+
+
+.vignette-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .9) 100%);
+  pointer-events: none; /* Allow clicking through the overlay */
+}

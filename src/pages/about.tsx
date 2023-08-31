@@ -15,7 +15,7 @@ const about = () => {
       <ScrollToTop />
       <HomeBtn />
 
-      <Header />
+      <Header colorScheme="black" />
 
       <PageTransition>
         <LoadingBar backgroundColorClass="bg-customBlack" />

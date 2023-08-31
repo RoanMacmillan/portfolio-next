@@ -6,6 +6,7 @@ import Image from "next/image";
 import useIntersectionObserver from "@/hooks/useIntersectionObserver";
 import { motion } from "framer-motion";
 import LoadingBar from "@/components/LoadingBar";
+import heroImg from '../../public/assets/images/photos/slughero1.webp'
 
 type PortfolioDetailProps = {
   project: Project;
@@ -19,20 +20,37 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
       <LoadingBar backgroundColorClass="bg-customBlack"></LoadingBar>
       {/* <div className="absolute left-0 top-0 h-1 w-full bg-customBlack"></div> */}
 
-      <motion.div
+{/* 
+    <div className="h-[900px] w-full -z-10 bg-red-300 absolute top-0 left-0">
+
+    <Image 
+    
+    src={heroImg}
+    alt='hero'
+    // width={2070}
+    // height={1380}
+    className="object-cover w-full h-full brightness-75"
+    
+    />
+
+</div> */}
+
+
+      {/* <motion.div
         initial={{ opacity: 0, y: 0 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0 }}
       >
-        <p>{project.label}</p>
-        <h1 className="mt-4 text-[60px] font-bold leading-[1] tracking-[-2px] lg:text-[80px]">
+        <p className="text-customWhite">{project.label}</p>
+        <h1 className="mt-4 text-[60px] font-bold text-customWhite leading-[1] tracking-[-2px] lg:text-[80px]">
           {project.title}
         </h1>
-        <div className="mt-6 h-[5px] w-14 bg-customBlack"></div>
-      </motion.div>
+        <div className="mt-6 h-[5px] w-14 bg-customWhite"></div>
+      </motion.div> */}
 
-      <motion.div
+
+      {/* <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
         exit={{ opacity: 1 }}
@@ -47,9 +65,9 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
             priority={true}
           />
         </div>
-      </motion.div>
+      </motion.div> */}
 
-      <div className="mt-[60px] lg:mt-[165px]">
+      <div className="mt-[60px] lg:mt-[60px]">
         <h2 className="text-customGray">About</h2>
         <div className="gap-48 lg:mt-[50px] lg:flex">
           <div>
