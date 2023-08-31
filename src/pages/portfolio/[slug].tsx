@@ -17,7 +17,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ project }) => {
       <ScrollToTop />
       <HomeBtn />
 
-      <Header colorScheme="white" />
+      <Header colorScheme="white" absolutePosition={true} />
 
       <SlugHero project={project} />
 

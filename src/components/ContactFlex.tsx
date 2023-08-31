@@ -16,7 +16,7 @@ const ContactFlex = () => {
       <div ref={cardRef} className={`mt-20 p-8 customMd:mt-0 customMd:px-14 customMd:py-12 customMd:pl-0 ${cardRefVisible ? 'transition-all opacity-100 duration-700 translate-y-[0px]' : 'opacity-0 translate-y-[20px]'}`}>
         <Image src={mail} alt={mail} width={28} height={28} />
 
-        <h3 className="test123 mt-6 text-lg font-bold">
+        <h3 className="test12 mt-6 text-lg font-bold">
           roanmacmillan@hotmail.com
         </h3>
         <p className="mt-6 text-[15px] text-customGray">

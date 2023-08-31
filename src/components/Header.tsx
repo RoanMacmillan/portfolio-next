@@ -6,9 +6,10 @@ type ColorScheme = 'black' | 'white';
 
 interface HeaderProps {
   colorScheme: ColorScheme;
+  absolutePosition: boolean;
 }
 
-const Header = ({ colorScheme }: HeaderProps) => {
+const Header = ({ colorScheme, absolutePosition }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
   // const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
@@ -25,7 +26,7 @@ const headerLineColorClass =
 
   return (
     <header
-      className={`relative z-50 flex w-full items-center justify-between px-6 xl:px-[30px] py-8 customMd:fixed 
+      className={`${absolutePosition ? 'test123' : ''} relative z-50 flex w-full items-center justify-between px-6 xl:px-[30px] py-8 customMd:fixed 
       
       
       

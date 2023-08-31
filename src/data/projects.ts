@@ -11,6 +11,7 @@ export type Project = {
   detailStatic3: string;
   background: string;
   slug: string;
+  slugHero: string;
 };
 
 const projects: Project[] = [
@@ -27,6 +28,7 @@ const projects: Project[] = [
     detailStatic1: "/assets/images/mobile/detail/audio-main-2.webp",
     detailStatic2: "/assets/images/mobile/detail/audio-static-new3.png",
     detailStatic3: "/assets/images/mobile/detail/audio-static-3.webp",
+    slugHero: '/assets/images/photos/slughero3.png',
     background:
       "This project is an e-commerce platform for purchasing audio equipment, which I built with React. It includes detailed pages of each item, a functional cart, and checkout system.",
   },
@@ -43,6 +45,8 @@ const projects: Project[] = [
     detailStatic1: "/assets/images/mobile/detail/arch-static-1.webp",
     detailStatic2: "/assets/images/mobile/detail/audio-static-3.webp",
     detailStatic3: "/assets/images/mobile/detail/arch-static-2.webp",
+    slugHero: '/assets/images/photos/slughero4.webp',
+
     smallDescription: "A visually captivating architecture portfolio",
     background:
       "An Architecure portfolio that displays multiple projects, built with react. It includes a detailed about and contact page, with leafletjs for the map feature.",
@@ -61,6 +65,8 @@ const projects: Project[] = [
     detailStatic1: "/assets/images/mobile/detail/gallery-main-2.webp",
     detailStatic2: "/assets/images/mobile/detail/gallery-static-3.webp",
     detailStatic3: "/assets/images/mobile/detail/gallery-static-3.webp",
+    slugHero: '/assets/images/photos/slughero5.webp',
+
     smallDescription: "An elegant gallery with masonry-style layout",
     background:
       "A masonry style layout made with CSS grid and React. It features a slideshow and lightbox feature to view the images.",
@@ -78,6 +84,8 @@ const projects: Project[] = [
     detailStatic1: "/assets/images/mobile/detail/min-main-2.webp",
     detailStatic2: "/assets/images/mobile/detail/audio-static-3.webp",
     detailStatic3: "/assets/images/mobile/detail/min-static-3.webp",
+    slugHero: '/assets/images/photos/slughero6.webp',
+
     smallDescription: "A frontend portfolio showcasing multiple projects",
     background:
       "This minimal portfolio template was built with React. It showcases multiple portfolio projects, with an index, detailed pages for each item and a slideshow feature.",

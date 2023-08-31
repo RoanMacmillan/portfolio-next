@@ -16,9 +16,9 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
   const [dividerRef1, dividerRefVisible1] = useIntersectionObserver();
 
   return (
-    <div className="mx-auto mt-[50px] max-w-[1280px] customMd:mt-[133px] lg:mt-[184px]">
+    <div className="mx-auto mt-[50px] max-w-[1280px] customMd:mt-[133px] lg:mt-[100px]">
       <LoadingBar backgroundColorClass="bg-customBlack"></LoadingBar>
-      {/* <div className="absolute left-0 top-0 h-1 w-full bg-customBlack"></div> */}
+      <div className="absolute left-0 top-0 h-1 w-full bg-customBlack z-50"></div>
 
 {/* 
     <div className="h-[900px] w-full -z-10 bg-red-300 absolute top-0 left-0">
@@ -111,7 +111,7 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
 
       <div
         ref={dividerRef1}
-        className={`relative mt-[60px] overflow-hidden lg:mt-[165px] ${
+        className={`relative mt-[100px] overflow-hidden lg:mt-[165px] ${
           dividerRefVisible1
             ? "translate-y-[-30px] opacity-100 transition-all duration-[800ms]"
             : "translate-y-0 opacity-0"
