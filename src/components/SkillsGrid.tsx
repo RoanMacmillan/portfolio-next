@@ -11,17 +11,15 @@ const SkillsGrid = () => {
           className={`flex h-[275px] items-center justify-center border border-b-0 border-r-0 border-gray-200 md:border-b-[1px] 
           
           
-          ${
-            skill.name === 'react' ? "border-r border-b-[1px]" : "" 
-          }
+          ${skill.name === "react" ? "border-b-[1px] border-r" : ""}
 
-          ${skill.name === 'html' ? 'border-b' : ''}
+          ${skill.name === "html" ? "border-b" : ""}
 
 
-          ${skill.name === 'css' ? 'border-r' : ''}
+          ${skill.name === "css" ? "border-r" : ""}
           
 
-          ${skill.name === 'css' ? 'md:border-r-0' : ''}
+          ${skill.name === "css" ? "md:border-r-0" : ""}
 
 
           
@@ -32,7 +30,7 @@ const SkillsGrid = () => {
             alt={`${skill.name} Logo`}
             width={60}
             height={60}
-            className={`overflow-hidden opacity-0 translate-y-[10px] delay-[${
+            className={`translate-y-[10px] overflow-hidden opacity-0 delay-[${
               skill.id * 50
             }ms] transition-all duration-[.6s]`}
             onLoadingComplete={(image) => {
