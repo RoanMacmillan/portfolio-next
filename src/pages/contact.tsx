@@ -5,7 +5,6 @@ import ContactHero from "@/containers/ContactHero";
 import ScrollToTop from "@/components/ScrollToTop";
 import LoadingBar from "@/components/LoadingBar";
 import Header from "@/components/Header";
-import PageTransition from "@/components/PageTransition";
 import HomeBtn from "@/components/HomeBtn";
 
 const contact = () => {
@@ -15,7 +14,6 @@ const contact = () => {
       <HomeBtn />
 
       <Header />
-      <PageTransition>
         <div className="px-6 customMd:px-20 xl:px-36">
           <LoadingBar backgroundColorClass="bg-customBlack" />
 
@@ -28,7 +26,6 @@ const contact = () => {
             link="/"
           />
         </div>
-      </PageTransition>
     </>
   );
 };

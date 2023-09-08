@@ -7,7 +7,6 @@ import ScrollToTop from "@/components/ScrollToTop";
 import LoadingModal from "@/components/LoadingModal";
 import Header from "@/components/Header";
 import HomeBtn from "@/components/HomeBtn";
-import PageTransition from "@/components/PageTransition";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true); // Start with isLoading true
@@ -31,7 +30,6 @@ const Home = () => {
         <Header />
       </div>
 
-      <PageTransition>
         <div className="absolute left-0 top-0 h-1 w-full bg-customBlack"></div>
 
         <LoadingModal isLoading={isLoading} />
@@ -51,7 +49,6 @@ const Home = () => {
             link="/contact"
           />
         </main>
-      </PageTransition>
     </>
   );
 };

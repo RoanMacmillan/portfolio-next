@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import { motion } from "framer-motion";
 import axios from "axios";
 import FormModal from "./FormModal";
 
@@ -150,12 +149,7 @@ const Form: React.FC = () => {
       onSubmit={handleSubmit}
       className="mt-10 customMd:ml-0 customMd:mt-0 customMd:w-1/2"
     >
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 1, y: -20 }}
-        transition={{ duration: 0.8 }}
-      >
+      
         <div className="flex justify-between">
           <div className="relative flex w-[45%] flex-col">
             <label className="text-base font-bold" htmlFor="name">
@@ -258,7 +252,6 @@ const Form: React.FC = () => {
         >
           {isLoading ? "Sending..." : "Send Now"}
         </button>
-      </motion.div>
 
       {/* {isLoading &&
       <div className="fixed left-0 w-full h-1 bg-customEmerald top-0"></div>

@@ -4,7 +4,6 @@ import React from "react";
 import { Project } from "@/data/projects";
 import Image from "next/image";
 import useIntersectionObserver from "@/hooks/useIntersectionObserver";
-import { motion } from "framer-motion";
 import LoadingBar from "@/components/LoadingBar";
 
 type PortfolioDetailProps = {
@@ -19,12 +18,7 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
       <LoadingBar backgroundColorClass="bg-customBlack"></LoadingBar>
       {/* <div className="absolute left-0 top-0 h-1 w-full bg-customBlack"></div> */}
 
-      <motion.div
-        initial={{ opacity: 0, y: 0 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 1 }}
-        transition={{ duration: 0.8, delay: 0 }}
-      >
+     
         <p>{project.label}</p>
         <h1 className="mt-4 text-[60px] font-bold leading-[1] tracking-[-2px] lg:text-[80px]">
           {project.title}
@@ -32,17 +26,16 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
         <div className="mt-6 h-[5px] w-14 bg-customBlack"></div>
 
      
-        <div className={`relative mt-[40px] overflow-hidden lg:mt-[80px]`}>
+        <div className={`relative mt-[40px] overflow-hidden lg:mt-[80px] slowFade`}>
           <Image
             src={project.detailStatic1}
-            alt={project.detailStatic1}
+            alt={project.detailStatic1} 
             width={2858}
             height={1372}
             priority={true}
           />
         </div>
 
-      </motion.div>
 
 
       <div className="mt-[60px] lg:mt-[165px]">

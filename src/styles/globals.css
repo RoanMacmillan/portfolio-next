@@ -59,6 +59,12 @@ body {
   animation: fadeOut 0.4s ease forwards;
 }
 
+
+.slowFade {
+
+  animation: fadeIn 0.8s ease forwards;
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;

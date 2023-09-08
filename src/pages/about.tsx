@@ -6,7 +6,6 @@ import ServicesContainer from "@/containers/ServicesContainer";
 import ScrollToTop from "@/components/ScrollToTop";
 import LoadingBar from "@/components/LoadingBar";
 import Header from "@/components/Header";
-import PageTransition from "@/components/PageTransition";
 import HomeBtn from "@/components/HomeBtn";
 
 const about = () => {
@@ -17,7 +16,6 @@ const about = () => {
 
       <Header />
 
-      <PageTransition>
         <LoadingBar backgroundColorClass="bg-customBlack" />
 
         <AboutHero />
@@ -31,7 +29,6 @@ const about = () => {
             link="/contact"
           />
         </div>
-      </PageTransition>
     </>
   );
 };
