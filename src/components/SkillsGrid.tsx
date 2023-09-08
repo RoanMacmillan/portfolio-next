@@ -8,20 +8,20 @@ const SkillsGrid = () => {
       {skills.map((skill) => (
         <div
           key={skill.id}
-          className={`flex h-[275px] items-center justify-center bg-slate-100 border border-b-0 border-r-0 border-gray-200 md:border-b-[1px] 
+          className={`flex h-[275px] items-center justify-center border border-b-0 border-r-0 border-gray-200 md:border-b-[1px] 
           
           
           ${
-            skill.id === 4 ? "border-r border-b-[1px]" : "" 
+            skill.name === 'react' ? "border-r border-b-[1px]" : "" 
           }
 
-          ${skill.id === 3 ? 'border-b' : ''}
+          ${skill.name === 'html' ? 'border-b' : ''}
 
 
-          ${skill.id === 2 ? 'border-r' : ''}
+          ${skill.name === 'css' ? 'border-r' : ''}
           
 
-          ${skill.id === 2 ? 'md:border-r-0' : ''}
+          ${skill.name === 'css' ? 'md:border-r-0' : ''}
 
 
           
