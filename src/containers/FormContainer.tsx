@@ -11,7 +11,7 @@ const FormContainer = () => {
       </h1>
       <div className="mt-6 h-[5px] w-14 bg-customBlack"></div>
 
-      <div className="mt-12 justify-between customMd:flex lg:mt-16">
+      <div className="mt-16 justify-between customMd:flex lg:mt-16">
         <div className="customMd:w-[40%]">
           <h2 className="text-2xl font-bold">Contact form</h2>
           <p className="mt-4 text-[15px] text-customGray">

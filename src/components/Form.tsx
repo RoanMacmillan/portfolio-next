@@ -147,7 +147,7 @@ const Form: React.FC = () => {
   return (
     <form
       onSubmit={handleSubmit}
-      className="mt-10 customMd:ml-0 customMd:mt-0 customMd:w-1/2"
+      className="mt-16 customMd:ml-0 customMd:mt-0 customMd:w-1/2"
     >
       
         <div className="flex justify-between">
@@ -246,7 +246,7 @@ const Form: React.FC = () => {
         <button
           className={` ${
             isLoading ? "cursor-not-allowed bg-customWhite" : ""
-          } mt-8 h-[45px] w-[150px] border-[2px] border-customBlack bg-customBlack font-semibold text-customWhite transition-all duration-300 hover:bg-customWhite hover:text-customBlack customMd:mt-16`}
+          } mt-12 h-[45px] w-[150px] border-[2px] border-customBlack bg-customBlack font-semibold text-customWhite transition-all duration-300 hover:bg-customWhite hover:text-customBlack customMd:mt-16`}
           type="submit"
           disabled={isLoading}
         >
