@@ -5,6 +5,7 @@ import Footer from "@/components/Footer";
 import Header from "@/components/Header";
 import ScrollToTop from "@/components/ScrollToTop";
 import HomeBtn from "@/components/HomeBtn";
+import Layout from "../layout";
 
 interface PortfolioItemProps {
   project: Project;
@@ -18,6 +19,8 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ project }) => {
 
       <Header />
 
+      <Layout>
+
       <div className="px-6 customMd:px-20 xl:px-36">
         <PortfolioDetail project={project} />
         <Footer
@@ -27,6 +30,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ project }) => {
           link="/"
         />
       </div>
+      </Layout>
     </>
   );
 };

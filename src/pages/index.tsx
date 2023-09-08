@@ -7,6 +7,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import LoadingModal from "@/components/LoadingModal";
 import Header from "@/components/Header";
 import HomeBtn from "@/components/HomeBtn";
+import Layout from "./layout";
 
 const Home = () => {
   const [isLoading, setIsLoading] = useState(true); // Start with isLoading true
@@ -23,6 +24,7 @@ const Home = () => {
 
   return (
     <>
+
       <ScrollToTop />
       <HomeBtn />
 
@@ -33,6 +35,9 @@ const Home = () => {
         <div className="absolute left-0 top-0 h-1 w-full bg-customBlack"></div>
 
         <LoadingModal isLoading={isLoading} />
+
+      <Layout>
+
 
         <main
           className={`px-6 customMd:px-20 xl:px-36 ${
@@ -49,6 +54,7 @@ const Home = () => {
             link="/contact"
           />
         </main>
+        </Layout>
     </>
   );
 };

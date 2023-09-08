@@ -6,6 +6,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import LoadingBar from "@/components/LoadingBar";
 import Header from "@/components/Header";
 import HomeBtn from "@/components/HomeBtn";
+import Layout from "./layout";
 
 const contact = () => {
   return (
@@ -14,6 +15,9 @@ const contact = () => {
       <HomeBtn />
 
       <Header />
+
+    <Layout>
+
         <div className="px-6 customMd:px-20 xl:px-36">
           <LoadingBar backgroundColorClass="bg-customBlack" />
 
@@ -26,6 +30,7 @@ const contact = () => {
             link="/"
           />
         </div>
+        </Layout>
     </>
   );
 };

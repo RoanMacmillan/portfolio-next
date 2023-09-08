@@ -7,6 +7,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import LoadingBar from "@/components/LoadingBar";
 import Header from "@/components/Header";
 import HomeBtn from "@/components/HomeBtn";
+import Layout from "./layout";
 
 const about = () => {
   return (
@@ -15,6 +16,9 @@ const about = () => {
       <HomeBtn />
 
       <Header />
+
+    <Layout>
+
 
         <LoadingBar backgroundColorClass="bg-customBlack" />
 
@@ -29,6 +33,7 @@ const about = () => {
             link="/contact"
           />
         </div>
+        </Layout>
     </>
   );
 };

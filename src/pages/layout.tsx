@@ -33,8 +33,8 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: loading ? 0 : 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.7 }}
-      className="h-screen w-screen p-4 max-w-5xl mx-auto"
+      transition={{ duration: 0.4 }}
+      className=""
     >
       {children}
     </motion.div>
