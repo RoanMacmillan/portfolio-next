@@ -18,25 +18,23 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
       <LoadingBar backgroundColorClass="bg-customBlack"></LoadingBar>
       {/* <div className="absolute left-0 top-0 h-1 w-full bg-customBlack"></div> */}
 
-     
-        <p>{project.label}</p>
-        <h1 className="mt-4 text-[60px] font-bold leading-[1] tracking-[-2px] lg:text-[80px]">
-          {project.title}
-        </h1>
-        <div className="mt-6 h-[5px] w-14 bg-customBlack"></div>
+      <p>{project.label}</p>
+      <h1 className="mt-4 text-[60px] font-bold leading-[1] tracking-[-2px] lg:text-[80px]">
+        {project.title}
+      </h1>
+      <div className="mt-6 h-[5px] w-14 bg-customBlack"></div>
 
-     
-        <div className={`relative mt-[40px] overflow-hidden lg:mt-[80px] slowFade`}>
-          <Image
-            src={project.detailStatic1}
-            alt={project.detailStatic1} 
-            width={2858}
-            height={1372}
-            priority={true}
-          />
-        </div>
-
-
+      <div className={`relative mt-[40px] overflow-hidden lg:mt-[80px]`}>
+        <Image
+          src={project.detailStatic1}
+          alt={project.detailStatic1}
+          width={2858}
+          height={1372}
+          priority={true}
+          className="transition-opacity duration-700 opacity-0"
+          onLoadingComplete={(image) => image.classList.remove("opacity-0")}
+        />
+      </div>
 
       <div className="mt-[60px] lg:mt-[165px]">
         <h2 className="text-customGray">About</h2>
@@ -67,8 +65,12 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
                 </a>
               </div>
               <div>
-                <a target="_blank"
-                  rel="noopener noreferrer" className="group" href={project.codeURL}>
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group"
+                  href={project.codeURL}
+                >
                   View Code
                   <div className="relative mt-[5px] h-[2px] w-24 bg-gray-200">
                     <div className=" absolute left-0 top-0 h-[2px] w-0 bg-customEmerald transition-all duration-300 group-hover:w-full"></div>

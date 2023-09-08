@@ -16,7 +16,7 @@ const AboutHero = () => {
         <div className="mt-6 h-[5px] w-14 bg-customBlack"></div>
       </h1>
 
-      <div className="mt-[50px]">
+      <div className="mt-[50px] lg:mt-[100px]">
         <h2 className="text-3xl font-bold">About me</h2>
         <p className="mt-4 max-w-[550px] text-[15px] text-customGray">
           Hi, I'm Roan Macmillan. I'm a frontend developer looking for a new
