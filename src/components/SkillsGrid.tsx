@@ -11,12 +11,12 @@ const SkillsGrid = () => {
           className={`flex h-[275px] items-center justify-center border border-b-0 border-r-0 border-gray-200 md:border-b-[1px] 
           
           
-          ${skill.name === "react" ? "border-b-[1px] border-r" : ""}
+          ${skill.name === "react" ? "border-b-[1px] border-r-[1px]" : ""}
 
-          ${skill.name === "html" ? "border-b" : ""}
+          ${skill.name === "html" ? "border-b-[1px]" : ""}
 
 
-          ${skill.name === "css" ? "border-r" : ""}
+          ${skill.name === "css" ? "border-r-[1px]" : ""}
           
 
           ${skill.name === "css" ? "md:border-r-0" : ""}
