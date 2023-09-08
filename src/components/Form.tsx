@@ -13,6 +13,8 @@ const Form: React.FC = () => {
   const [isLoading, setIsLoading] = useState(false);
   const [modalVisible, setModalVisible] = useState(false);
   const [modalContent, setModalContent] = useState("success");
+  const [isChecked, setIsChecked] = useState(false);
+  const [termsError, setTermsError] = useState("");
 
   const closeModal = () => {
     setModalVisible(false);
@@ -68,14 +70,18 @@ const Form: React.FC = () => {
     const nameError = validateName(formData.name);
     const emailError = validateEmail(formData.email);
     const messageError = validateMessage(formData.message);
+    const termsErrorMsg = isChecked
+      ? ""
+      : "* You must agree to the terms and conditions";
 
-    if (nameError || emailError || messageError) {
+    if (nameError || emailError || messageError || termsErrorMsg) {
       setErrors({
         ...errors,
         name: nameError,
         email: emailError,
         message: messageError,
       });
+      setTermsError(termsErrorMsg);
       return;
     }
 
@@ -101,6 +107,8 @@ const Form: React.FC = () => {
           message: "",
         });
 
+        setTermsError("");
+
         setModalVisible(true);
         setModalContent("success");
 
@@ -114,6 +122,8 @@ const Form: React.FC = () => {
           message: "",
         });
 
+        setTermsError("");
+
         // Handle error scenario
       }
     } catch (error) {
@@ -126,6 +136,8 @@ const Form: React.FC = () => {
         email: "",
         message: "",
       });
+
+      setTermsError("");
 
       // Handle error scenario
     } finally {
@@ -208,6 +220,35 @@ const Form: React.FC = () => {
           )}
         </div>
 
+        <div className="relative mt-6 flex flex-col gap-4 customMd:mt-8">
+          <div className="flex flex-row gap-2">
+            <input
+              type="checkbox"
+              id="terms"
+              name="terms"
+              checked={isChecked}
+              onChange={() => setIsChecked(!isChecked)}
+              className="mr-2 cursor-pointer"
+            />
+
+            <label htmlFor="terms" className="text-sm">
+              I agree to the{" "}
+              <a
+                href="/terms"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="cursor-pointer underline"
+              >
+                Privacy Policy
+              </a>
+            </label>
+          </div>
+
+          {termsError && (
+            <div className="text-xs text-red-500">{termsError}</div>
+          )}
+        </div>
+
         <button
           className={` ${
             isLoading ? "cursor-not-allowed bg-customWhite" : ""
@@ -219,7 +260,7 @@ const Form: React.FC = () => {
         </button>
       </motion.div>
 
-        {/* {isLoading &&
+      {/* {isLoading &&
       <div className="fixed left-0 w-full h-1 bg-customEmerald top-0"></div>
         } */}
 
