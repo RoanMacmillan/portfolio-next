@@ -30,14 +30,8 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
           {project.title}
         </h1>
         <div className="mt-6 h-[5px] w-14 bg-customBlack"></div>
-      </motion.div>
 
-      <motion.div
-        initial={{ opacity: 0, y: 30 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 1 }}
-        transition={{ duration: 1.25, delay: 1 }}
-      >
+     
         <div className={`relative mt-[40px] overflow-hidden lg:mt-[80px]`}>
           <Image
             src={project.detailStatic1}
@@ -47,7 +41,9 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
             priority={true}
           />
         </div>
+
       </motion.div>
+
 
       <div className="mt-[60px] lg:mt-[165px]">
         <h2 className="text-customGray">About</h2>
