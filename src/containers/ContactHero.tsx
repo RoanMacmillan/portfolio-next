@@ -12,9 +12,12 @@ const ContactHero = () => {
         src={photo}
         quality={50}
         priority={true}
-        className="object-cover opacity-0 transition-all duration-700"
+        className="object-cover opacity-0 transition-all duration-700 scale-90"
         
-        onLoadingComplete={(image) => image.classList.remove("opacity-0")}
+        onLoadingComplete={(image) => {
+          image.classList.remove("opacity-0");
+          image.classList.remove("scale-90");
+        }}
 
       />
     </div>

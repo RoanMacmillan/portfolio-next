@@ -31,6 +31,7 @@ module.exports = {
         'customMd': '900px', // custom media query for 900px
         'customXL': '1364px', // custom xl mq for vertical line
         'customXXL': '1600px',
+        'customXS': '541px',
       },
     },
   },
