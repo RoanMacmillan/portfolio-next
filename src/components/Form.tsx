@@ -245,7 +245,7 @@ const Form: React.FC = () => {
 
         <button
           className={` ${
-            isLoading ? "cursor-not-allowed bg-customWhite" : ""
+            isLoading ? "cursor-not-allowed bg-customWhite text-customBlack" : ""
           } mt-12 h-[45px] w-[150px] border-[2px] border-customBlack bg-customBlack font-semibold text-customWhite transition-all duration-300 hover:bg-customWhite hover:text-customBlack customMd:mt-16`}
           type="submit"
           disabled={isLoading}
