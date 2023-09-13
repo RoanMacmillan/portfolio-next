@@ -84,7 +84,7 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
 
       <div
         ref={dividerRef1}
-        className={`relative mt-[60px] overflow-hidden lg:mt-[165px] ${
+        className={`relative mt-[91px] overflow-hidden lg:mt-[165px] ${
           dividerRefVisible1
             ? "translate-y-[-30px] opacity-100 transition-all duration-[800ms]"
             : "translate-y-0 opacity-0"
