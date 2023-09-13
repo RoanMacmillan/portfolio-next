@@ -3,6 +3,7 @@ import React, { useState, useEffect } from "react";
 import close from "../../public/assets/icons/icon-close.svg";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/router";
 
 interface ModalMenuProps {
   isOpen: boolean;
@@ -10,9 +11,15 @@ interface ModalMenuProps {
 }
 
 const ModalMenu = ({ isOpen, onClose }: ModalMenuProps) => {
+
+  const router = useRouter();
+
+
   const handleLinkClick = () => {
     onClose();
   };
+
+
 
   useEffect(() => {
     if (isOpen) {
@@ -68,27 +75,33 @@ const ModalMenu = ({ isOpen, onClose }: ModalMenuProps) => {
         
         `}
         >
-          <Link
-            onClick={handleLinkClick}
-            className="transition-colors duration-300 hover:text-white"
-            href="/"
-          >
-            Portfolio
-          </Link>
-          <Link
-            onClick={handleLinkClick}
-            className="transition-colors duration-300 hover:text-white"
-            href="/about"
-          >
-            About me
-          </Link>
-          <Link
-            onClick={handleLinkClick}
-            className="transition-colors duration-300 hover:text-white"
-            href="/contact"
-          >
-            Contact
-          </Link>
+         <Link
+  onClick={handleLinkClick}
+  className={`transition-colors duration-300 text-customGray hover:text-white ${
+    router.pathname === "/" ? "text-white" : ""
+  }`}
+  href="/"
+>
+  Portfolio
+</Link>
+<Link
+  onClick={handleLinkClick}
+  className={`transition-colors duration-300 text-customGray hover:text-white ${
+    router.pathname === "/about" ? "text-white" : ""
+  }`}
+  href="/about"
+>
+  About me
+</Link>
+<Link
+  onClick={handleLinkClick}
+  className={`transition-colors duration-300 text-customGray hover:text-white ${
+    router.pathname === "/contact" ? "text-white" : ""
+  }`}
+  href="/contact"
+>
+  Contact
+</Link>
         </nav>
 
         <div className=" hidden w-1/2 customMd:block">
