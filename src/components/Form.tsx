@@ -14,7 +14,6 @@ const Form: React.FC = () => {
   const [modalContent, setModalContent] = useState("success");
   const [isChecked, setIsChecked] = useState(false);
   const [termsError, setTermsError] = useState("");
-  const [animationDuration, setAnimationDuration] = useState("2s"); // Default duration is 2 seconds
 
 
   const closeModal = () => {
@@ -68,7 +67,6 @@ const Form: React.FC = () => {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
   
-    const startTime = performance.now(); // Get start time
   
     const nameError = validateName(formData.name);
     const emailError = validateEmail(formData.email);
@@ -144,10 +142,7 @@ const Form: React.FC = () => {
   
       // Handle error scenario
     } finally {
-      const endTime = performance.now(); // Get end time
-      const duration = endTime - startTime; // Calculate duration in milliseconds
   
-      setAnimationDuration(`${duration}ms`); // Set animation duration dynamically
   
       setIsLoading(false);
     }
@@ -263,16 +258,12 @@ const Form: React.FC = () => {
           {isLoading ? "Sending..." : "Send Now"}
         </button>
 
-      {/* {isLoading &&
+      {isLoading &&
         
       <div className="fixed left-0 w-1/2 h-1 bg-customEmerald top-0 animate-moving-bar"></div>
-} */}
-
-{isLoading &&
-
-<div className={`fixed left-0 w-full h-1 bg-customEmerald top-0 animate-loading-bar`} style={{ animationDuration: animationDuration }}></div>
-
 }
+
+
 
 
       {modalVisible && (
