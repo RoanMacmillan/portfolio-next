@@ -253,9 +253,11 @@ const Form: React.FC = () => {
           {isLoading ? "Sending..." : "Send Now"}
         </button>
 
-      {/* {isLoading &&
-      <div className="fixed left-0 w-full h-1 bg-customEmerald top-0"></div>
-        } */}
+      {isLoading &&
+        
+      <div className="fixed left-0 w-1/2 h-1 bg-customEmerald top-0 animate-moving-bar"></div>
+}
+
 
       {modalVisible && (
         <FormModal

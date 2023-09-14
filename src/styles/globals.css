@@ -122,3 +122,17 @@ body {
   filter: invert(44%) sepia(23%) saturate(6981%) hue-rotate(141deg) brightness(89%) contrast(101%);
 }
 
+
+
+@keyframes moving-bar {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(200%);
+  }
+}
+
+.animate-moving-bar {
+  animation: moving-bar 2.5s linear infinite;
+}

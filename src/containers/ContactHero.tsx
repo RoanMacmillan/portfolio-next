@@ -10,7 +10,7 @@ const ContactHero = () => {
       <Image
         alt="dark image"
         src={photo}
-        quality={50}
+        quality={100}
         priority={true}
         className="object-cover opacity-0 transition-all duration-700 scale-90"
         
