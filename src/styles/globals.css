@@ -124,7 +124,7 @@ body {
 
 
 
-@keyframes moving-bar {
+/* @keyframes moving-bar {
   0% {
     transform: translateX(-100%);
   }
@@ -134,5 +134,19 @@ body {
 }
 
 .animate-moving-bar {
-  animation: moving-bar 2.5s linear infinite;
+  animation: moving-bar 2s linear infinite;
+} */
+
+
+@keyframes loading-bar {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.animate-loading-bar {
+  animation: loading-bar forwards;
 }
