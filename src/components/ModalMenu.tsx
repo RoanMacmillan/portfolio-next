@@ -105,7 +105,7 @@ const ModalMenu = ({ isOpen, onClose }: ModalMenuProps) => {
         </nav>
 
         <div className=" hidden w-1/2 customMd:block">
-          <p className="text-[15px] text-customGray">
+          <p className="text-[15px] text-customGray hover:text-customWhite transition-colors duration-500">
           Frontend development refers to the process of creating and designing the visible parts of a website or web application that users interact with directly.
           </p>
         </div>
