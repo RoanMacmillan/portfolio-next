@@ -69,7 +69,9 @@ const PortfolioIndex = ({ isLoading }: { isLoading: boolean }) => {
                 </Link>
               </div>
 
-              <p className="mt-10 text-customBlack ">{project.label}</p>
+              <p className="mt-10 text-[15px] text-customGray ">
+                {project.label}
+              </p>
               <h2 className="mt-4 text-xl font-bold text-customBlack lg:mt-6 lg:text-3xl">
                 {project.title}
               </h2>
