@@ -23,7 +23,7 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
         {project.title}
       </h1>
       <div className="mt-6 h-[5px] w-14 bg-customBlack"></div>
-
+      
       <div className={`relative mt-[40px] overflow-hidden lg:mt-[80px]`}>
         <Image
           src={project.detailStatic1}
@@ -60,7 +60,7 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
                 >
                   View Site
                   <div className="relative mt-[5px] h-[2px] w-24 bg-gray-200">
-                    <div className=" absolute left-0 top-0 h-[2px] w-0 bg-customEmerald transition-all duration-300 group-hover:w-full"></div>
+                    <div className=" absolute left-0 top-0 h-[2px] w-0 bg-customBlack transition-all duration-300 group-hover:w-full"></div>
                   </div>
                 </a>
               </div>
@@ -73,7 +73,7 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
                 >
                   View Code
                   <div className="relative mt-[5px] h-[2px] w-24 bg-gray-200">
-                    <div className=" absolute left-0 top-0 h-[2px] w-0 bg-customEmerald transition-all duration-300 group-hover:w-full"></div>
+                    <div className=" absolute left-0 top-0 h-[2px] w-0 bg-customBlack transition-all duration-300 group-hover:w-full"></div>
                   </div>
                 </a>
               </div>
