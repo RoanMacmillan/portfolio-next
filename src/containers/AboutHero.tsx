@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Image from "next/image";
-import hero from '../../public/assets/images/photos/about-hero.webp'
+import hero from '../../public/assets/images/photos/about-hero-4.webp'
 
 const AboutHero = () => {
   const handleScroll = () => {
@@ -42,9 +42,9 @@ onLoadingComplete={(image) => {
 
       <div className="mt-[50px] lg:mt-[100px]">
         <h2 className="text-3xl font-bold">About me</h2>
-        <p className="mt-4 max-w-[550px] text-[15px] text-customGray">
+        <p className="mt-4 max-w-[550px] text-[15px] leading-6 text-customGray">
           Hi, I'm Roan Macmillan. I'm a frontend developer looking for a new
-          role. I'm based in Edinburgh and open to working remotely.
+          role based in Edinburgh or remote.
         </p>
         <button onClick={handleScroll} className="group text-left">
           <p className="mt-[30px] font-semibold">Read More</p>
