@@ -1,5 +1,6 @@
 export type Project = {
   thumbnail: string;
+  photoThumbnail: string;
   label: string;
   title: string;
   description: string;
@@ -17,6 +18,8 @@ const projects: Project[] = [
   {
     slug: "audio",
     thumbnail: "/assets/images/mobile/thumbnails/audio-thumb.webp",
+    photoThumbnail: "/assets/images/mobile/thumbnails/test.webp",
+
     label: "01-04",
     title: "Audio",
     description:
@@ -30,10 +33,12 @@ const projects: Project[] = [
     background:
       "This project is an e-commerce platform for purchasing audio equipment, which I built with React. It includes detailed pages of each item, a functional cart, and checkout system.",
   },
-  
+
   {
     slug: "arch",
     thumbnail: "/assets/images/mobile/thumbnails/arch-thumb.webp",
+    photoThumbnail: "/assets/images/mobile/thumbnails/test4.webp",
+
     label: "02-04",
     title: "Arch",
     description:
@@ -48,10 +53,11 @@ const projects: Project[] = [
       "An Architecure portfolio that displays multiple projects, built with react. It includes a detailed about and contact page, with leafletjs for the map feature.",
   },
 
-
-{
+  {
     slug: "galleria",
     thumbnail: "/assets/images/mobile/thumbnails/gallery-thumb.webp",
+    photoThumbnail: "/assets/images/mobile/thumbnails/test3.webp",
+
     label: "03-04",
     title: "Galleria",
     description:
@@ -69,6 +75,8 @@ const projects: Project[] = [
   {
     slug: "minimal",
     thumbnail: "/assets/images/mobile/thumbnails/min-thumb.webp",
+    photoThumbnail: "/assets/images/mobile/thumbnails/test2.webp",
+
     label: "04-04",
     title: "Minimal",
     description:

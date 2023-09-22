@@ -56,15 +56,14 @@ const PortfolioIndex = ({ isLoading }: { isLoading: boolean }) => {
               }`}
               data-index={index}
             >
-              <div className="overflow-hidden">
+              <div className="overflow-hidden h-[350px] lg:h-[500px] md:max-w-[476px] relative">
                 <Link href={`/portfolio/${project.slug}`}>
                   <Image
-                    src={project.thumbnail}
+                    src={project.photoThumbnail}
                     alt={project.thumbnail}
                     priority
-                    height={1302}
-                    width={1406}
-                    className={`transition-all duration-700 hover:scale-105`}
+                    fill
+                    className={`transition-all duration-700 hover:scale-105 object-cover`}
                   />
                 </Link>
               </div>
