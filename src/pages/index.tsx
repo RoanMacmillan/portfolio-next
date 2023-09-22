@@ -29,7 +29,7 @@ const Home = () => {
       <HomeBtn />
 
       <div className={`${isLoading ? "invisible" : "visible"}`}>
-        <Header />
+      <Header colorScheme="black" absolutePosition={false} />
       </div>
 
         <div className="absolute left-0 top-0 h-1 w-full bg-customBlack"></div>

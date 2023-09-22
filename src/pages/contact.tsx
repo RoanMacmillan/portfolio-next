@@ -14,7 +14,8 @@ const contact = () => {
       <ScrollToTop />
       <HomeBtn />
 
-      <Header />
+      <Header colorScheme="black" absolutePosition={false} />
+
 
     <Layout>
 

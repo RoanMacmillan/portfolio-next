@@ -14,31 +14,20 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
   const [dividerRef1, dividerRefVisible1] = useIntersectionObserver();
 
   return (
-    <div className="mx-auto mt-[50px] max-w-[1280px] customMd:mt-[133px] lg:mt-[184px]">
+    <div className="mx-auto mt-[50px] max-w-[1280px] customMd:mt-[80px]">
       <LoadingBar backgroundColorClass="bg-customBlack"></LoadingBar>
       {/* <div className="absolute left-0 top-0 h-1 w-full bg-customBlack"></div> */}
 
-      <p>{project.label}</p>
+      {/* <p>{project.label}</p>
       <h1 className="mt-4 text-[60px] font-bold leading-[1] tracking-[-2px] lg:text-[80px]">
         {project.title}
       </h1>
-      <div className="mt-6 h-[5px] w-14 bg-customBlack"></div>
-      
-      <div className={`relative mt-[40px] overflow-hidden lg:mt-[80px]`}>
-        <Image
-          src={project.detailStatic1}
-          alt={project.detailStatic1}
-          width={2858}
-          height={1372}
-          priority={true}
-          className="transition-opacity duration-700 opacity-0"
-          onLoadingComplete={(image) => image.classList.remove("opacity-0")}
-        />
-      </div>
+      <div className="mt-6 h-[5px] w-14 bg-customBlack"></div> */}
 
-      <div className="mt-[60px] lg:mt-[165px]">
-        <h2 className="text-customGray">About</h2>
-        <div className="gap-48 lg:mt-[50px] lg:flex">
+
+<div className="mt-[0px] lg:mt-[0px]">
+        <h2 className="text-customGray">About Project</h2>
+        <div className="justify-between lg:mt-[50px] lg:flex">
           <div>
             <p className="mt-[20px] text-xl font-bold lg:mt-[0px] lg:w-[400px] lg:text-[32px] lg:leading-9">
               {project.smallDescription}
@@ -81,6 +70,23 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
           </div>
         </div>
       </div>
+
+
+
+      
+      <div className={`relative mt-[50px] overflow-hidden customMd:mt-[80px] lg:mt-[100px]`}>
+        <Image
+          src={project.detailStatic1}
+          alt={project.detailStatic1}
+          width={2858}
+          height={1372}
+          priority={true}
+          className="transition-opacity duration-700 opacity-0"
+          onLoadingComplete={(image) => image.classList.remove("opacity-0")}
+        />
+      </div>
+
+      
 
       <div
         ref={dividerRef1}

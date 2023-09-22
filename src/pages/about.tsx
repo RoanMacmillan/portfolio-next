@@ -15,7 +15,8 @@ const about = () => {
       <ScrollToTop />
       <HomeBtn />
 
-      <Header />
+      <Header colorScheme="black" absolutePosition={false} />
+
 
     <Layout>
 
