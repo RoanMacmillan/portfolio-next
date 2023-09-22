@@ -4,30 +4,14 @@ import ModalMenu from "./ModalMenu";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
-  // const [isScrolled, setIsScrolled] = useState<boolean>(false);
 
   const handleMenuClick = () => {
     setIsMenuOpen(!isMenuOpen);
   };
 
-  // const handleScroll = () => {
-  //   if (window.scrollY > 1000) { // Adjust the scroll threshold as needed
-  //     setIsScrolled(true);
-  //   } else {
-  //     setIsScrolled(false);
-  //   }
-  // };
-
-  // useEffect(() => {
-  //   window.addEventListener("scroll", handleScroll);
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
-
   return (
     <header
-      className={`relative z-50 flex w-full items-center justify-between px-6 xl:px-[30px] py-8 customMd:fixed 
+      className={`relative z-50 flex w-full items-center justify-between px-6 py-8 customMd:fixed xl:px-[30px] 
       
       
       
