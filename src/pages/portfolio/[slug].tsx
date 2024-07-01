@@ -24,7 +24,7 @@ const PortfolioItem: React.FC<PortfolioItemProps> = ({ project }) => {
 
       <Layout>
 
-      <div className="px-6 customMd:px-20 xl:px-36">
+      <div className="px-6">
         <PortfolioDetail project={project} />
         <Footer
           title="See"

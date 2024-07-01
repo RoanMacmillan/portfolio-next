@@ -14,7 +14,7 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
   const [dividerRef1, dividerRefVisible1] = useIntersectionObserver();
 
   return (
-    <div className="mx-auto mt-[50px] max-w-[1280px] customMd:mt-[80px]">
+    <div className="mx-auto mt-[50px]  customMd:mt-[80px]">
       <LoadingBar backgroundColorClass="bg-customBlack"></LoadingBar>
       {/* <div className="absolute left-0 top-0 h-1 w-full bg-customBlack"></div> */}
 
@@ -25,7 +25,7 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
       <div className="mt-6 h-[5px] w-14 bg-customBlack"></div> */}
 
 
-<div className="mt-[0px] lg:mt-[0px]">
+<div className="mt-[0px] lg:mt-[0px] max-w-[1280px] mx-auto">
         <h2 className="text-customGray">About Project</h2>
         <div className="justify-between lg:mt-[50px] lg:flex">
           <div>
@@ -72,9 +72,25 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
       </div>
 
 
+      <div className="relative mt-[50px] h-[675px] mx-auto max-w-[1450px] overflow-hidden customMd:mt-[80px] lg:mt-[100px]">
+
+      <Image
+          src={project.detailStatic1}
+          alt={project.detailStatic1}
+          width={2858}
+          height={1372}
+          priority={true}
+          className="transition-opacity duration-700 opacity-0"
+          onLoadingComplete={(image) => image.classList.remove("opacity-0")}
+        />
+
+     
+
+      </div>
+
 
       
-      <div className={`relative mt-[50px] overflow-hidden customMd:mt-[80px] lg:mt-[100px]`}>
+      {/* <div className={`relative mt-[50px] overflow-hidden customMd:mt-[80px] lg:mt-[100px]`}>
         <Image
           src={project.detailStatic1}
           alt={project.detailStatic1}
@@ -102,7 +118,7 @@ const PortfolioDetail: React.FC<PortfolioDetailProps> = ({ project }) => {
           width={2930}
           height={1802}
         />
-      </div>
+      </div> */}
 
       <div className="mt-[60px] block h-[1px] w-full bg-gray-200 sm:hidden"></div>
     </div>
